@@ -16,9 +16,13 @@
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
 <link href="static/css/style.css" rel="stylesheet">
 <link href="static/css/refresh.css?v=20260914-button-align" rel="stylesheet">
+<link href="static/css/modern.css?v=20260916-brand-2" rel="stylesheet">
+<link href="static/css/navigation.css?v=20260916" rel="stylesheet">
+<link href="static/css/readability.css?v=20260916-1" rel="stylesheet">
 </head>
 
 <body class="inner-page">
+<a class="skip-link" href="#main-content">跳转到主要内容</a>
 
 
 
@@ -36,17 +40,17 @@
 </div>
 
 <div class="container-fluid position-relative p-0">
-<nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-<a href="index.html" class="navbar-brand p-0">
-<div class="brand-title m-0"><img class="logo" src="static/image/logo.png" alt="">深圳世纪祥云技术有限公司</div>
-</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-<span class="fa fa-bars"></span>
-</button><div class="collapse navbar-collapse" id="navbarCollapse">
-<div class="navbar-nav ms-auto py-0">
+<nav class="navbar navbar-expand-lg navbar-dark site-nav-compact px-5 py-3 py-lg-0" aria-label="主导航">
+<a href="index.html" class="navbar-brand p-0"><div class="brand-title m-0"><img class="logo" src="static/image/logo.png" alt="">深圳世纪祥云技术有限公司</div></a>
+<button class="navbar-toggler" type="button" aria-label="展开或收起导航" aria-controls="navbarCollapse" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="fa fa-bars" aria-hidden="true"></span></button>
+<div class="collapse navbar-collapse" id="navbarCollapse"><div class="navbar-nav ms-auto py-0">
 <a href="index.html" class="nav-item nav-link">首页</a>
 <div class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">关于我们</a>
+<a href="#" class="
+nav-link dropdown-toggle
+" data-bs-toggle="dropdown">
+关于我们
+</a>
 <div class="dropdown-menu m-0">
 <a href="about.html" class="dropdown-item">公司概述</a>
 <a href="about1.html" class="dropdown-item">公司大事记</a>
@@ -54,38 +58,43 @@
 <a href="about3.html" class="dropdown-item">软件著作权</a>
 </div>
 </div>
-<a href="form.html" class="nav-item nav-link">服务形式</a>
-<a href="objectives.html" class="nav-item nav-link active" aria-current="page">服务目标</a>
 <div class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">服务目录</a>
+<a href="#" class="
+nav-link dropdown-toggle
+" data-bs-toggle="dropdown">
+产品和服务
+</a>
 <div class="dropdown-menu m-0">
-<a href="directory1.html" class="dropdown-item">Linux 操作系统高级技术支持服务项目</a>
-<a href="directory2.html" class="dropdown-item">系统运维咨询和定制化开发</a>
-<a href="directory3.html" class="dropdown-item">容器和云原生</a>
+<a href="product.html" class="dropdown-item">产品和服务总览</a>
+<a href="directory1.html" class="dropdown-item">Linux 高级技术支持</a>
+<a href="directory2.html" class="dropdown-item">系统运维咨询和定制开发</a>
+<a href="directory3.html" class="dropdown-item">容器与云原生</a>
 <a href="directory4.html" class="dropdown-item">开源云平台建设</a>
 <a href="directory5.html" class="dropdown-item">公有云迁移技术支持</a>
 <a href="directory6.html" class="dropdown-item">技术培训</a>
 </div>
 </div>
-<a href="advantage.html" class="nav-item nav-link">服务优势</a>
 <div class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">成功案例</a>
+<a href="#" class="
+nav-link dropdown-toggle active
+" data-bs-toggle="dropdown">
+服务保障
+</a>
 <div class="dropdown-menu m-0">
-<a href="project.html" class="dropdown-item">某零售行业公司监控定制化开发项目</a>
-<a href="project1.html" class="dropdown-item">某银行 Linux 操作系统补丁管理项目</a>
-<a href="project2.html" class="dropdown-item">某大型金融公司容器云平台第三方技术支持</a>
-<a href="project3.html" class="dropdown-item">某知名公司 CentOS 操作系统定制项目</a>
+<a href="form.html" class="dropdown-item">服务形式</a>
+<a href="objectives.html" class="dropdown-item" aria-current="page">服务目标</a>
+<a href="advantage.html" class="dropdown-item">服务优势</a>
 </div>
 </div>
-<a href="product.html" class="nav-item nav-link">产品和服务</a>
 <a href="customer.html" class="nav-item nav-link">客户案例</a>
-<a href="contact.html" class="nav-item nav-link">联系我们</a></div>
-</div>
+<a href="contact.html" class="nav-item nav-link">联系我们</a>
+</div></div>
 </nav>
 
 <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
 <div class="row py-5">
 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+<p class="page-kicker">OUR EXPERTISE / 专业技术服务</p>
 <h1 class="display-4 text-white animated zoomIn">服务目标</h1>
 <nav class="page-breadcrumb" aria-label="面包屑导航"><ol><li><a href="index.html">首页</a></li><li><span aria-current="page">服务目标</span></li></ol></nav>
 </div>
@@ -95,7 +104,7 @@
 
 
 
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div id="main-content" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
 <div class="container py-5">
 <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
 <h2 class="mb-0">为您提供可信赖的开源专家服务</h2>
@@ -121,7 +130,7 @@
 </div>
 <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
 <div class="position-relative h-100">
-<img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="static/image/abstract-network.svg?v=20260914-cyan-actions" style="object-fit: cover;" alt="">
+<img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="static/image/abstract-network.svg?v=20260916-brand" style="object-fit: cover;" alt="">
 </div>
 </div>
 <div class="col-lg-4">
@@ -147,7 +156,7 @@
 </div>
 
 <!--
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div  class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
 <div class="container py-5 mb-5">
 <div class="bg-white">
 <div class="owl-carousel vendor-carousel">

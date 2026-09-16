@@ -1,0 +1,75 @@
+/* A different visual vocabulary for every service; one shared brand palette. */
+.showcase-artwork { width: 100%; margin: 16px 0 6px; }
+.service-scene { display: block; width: 100%; height: auto; overflow: visible; }
+.service-scene text { fill: #43516a; font-family: inherit; font-size: 17px; font-weight: 500; }
+.service-scene .scene-title { fill: #17243c; font-size: 19px; font-weight: 600; }
+.service-scene .scene-small { font-size: 14px; fill: #667085; font-weight: 400; }
+.service-scene .scene-tiny { font-size: 11px; fill: #087d9e; }
+.service-scene .scene-code { font-family: Consolas,monospace; font-size: 17px; fill: #087d9e; }
+.service-scene .scene-big { font-size: 30px; letter-spacing: .08em; fill: #087d9e; }
+.scene-box,.scene-terminal { fill: #fff; stroke: #d9e2eb; stroke-width: 1.5; }
+.scene-soft,.scene-cloud,.scene-book { fill: #eaf8fc; stroke: #bde8f4; stroke-width: 1.5; }
+.scene-terminal { fill: #f8fafc; }
+.scene-accent { fill: #06a3da; stroke: none; }
+.scene-muted-fill { fill: #d9e2eb; }
+.scene-line { fill: none; stroke: #b8cbd9; stroke-width: 1.5; }
+.scene-track { fill: #e5edf3; stroke: none; }
+.scene-route { fill: none; stroke: #dae5ed; stroke-width: 2; }
+.scene-flow { fill: none; stroke: #06a3da; stroke-width: 2; stroke-dasharray: 7 20; }
+.scene-wave { fill: none; stroke: #06a3da; stroke-width: 2.5; stroke-dasharray: 220; }
+.scene-pod { fill: #eaf8fc; stroke: #06a3da; stroke-width: 1.3; }
+.scene-layer { fill: #eaf8fc; stroke: #06a3da; stroke-width: 1.5; }
+.scene-layer-side { fill: #f6fbfe; stroke: #bde8f4; stroke-width: 1.5; }
+.service-scene .scene-layer-label { fill: #087d9e; font-size: 18px; }
+.scene-page { fill: #fff; stroke: #bde8f4; stroke-width: 1.5; }
+.scene-loop-track { fill: none; stroke: #eaf8fc; stroke-width: 20; }
+.scene-loop-travel { fill: none; stroke: #06a3da; stroke-width: 4; stroke-dasharray: 44 36; }
+.scene-orbit { fill: none; stroke: #d9e5ed; stroke-width: 1.5; stroke-dasharray: 5 6; }
+.scene-stair-route { fill: none; stroke: #e3edf4; stroke-width: 8; stroke-linejoin: round; }
+.scene-stair-progress { fill: none; stroke: #06a3da; stroke-width: 4; stroke-dasharray: 700; stroke-linejoin: round; }
+.scene-growth-arrow { fill: none; stroke: #06a3da; stroke-width: 2; stroke-dasharray: 450; }
+.scene-motion { transform-box: fill-box; transform-origin: center; animation-play-state: paused !important; }
+.service-showcase.is-animating .showcase-panel:not([hidden]) .scene-motion { animation-play-state: running !important; }
+.scene-terminal-line { animation: scene-reveal-line 5s ease infinite; animation-delay: var(--delay); }
+.scene-cursor { animation: scene-blink 1.2s steps(1) infinite; }
+.scene-meter { transform-origin: left; animation: scene-meter-change 4s ease-in-out infinite; animation-delay: var(--delay); }
+.scene-wave-group { animation: scene-wave-draw 4s linear infinite; }
+.scene-flow-group { animation: scene-flow-travel 3s linear infinite; }
+.scene-pod-deploy { animation: scene-pod-land 5s ease-in-out infinite; animation-delay: var(--delay); }
+.scene-layer-float { animation: scene-layer-rise 5s ease-in-out infinite; animation-delay: var(--delay); }
+.scene-transfer { animation: scene-packet-travel 4s ease-in-out infinite; }
+.scene-page-turn { transform-origin: left; animation: scene-page-flip 5s ease-in-out infinite; }
+.scene-step { animation: scene-step-highlight 5s ease infinite; animation-delay: var(--delay); }
+.scene-loop-group { animation: scene-loop-circulate 6s linear infinite; }
+.scene-orbit-dot { transform-box: view-box; transform-origin: 300px 164px; animation: scene-orbit-spin 9s linear infinite; }
+.scene-roadmap-group { animation: scene-roadmap-draw 6s ease infinite; }
+.scene-growth-bar { transform-origin: bottom; animation: scene-bar-grow 6s ease infinite; animation-delay: var(--delay); }
+.scene-growth-trace { animation: scene-growth-draw 6s ease infinite; }
+.showcase-artwork-fallback { min-height: 280px; display: grid; place-items: center; color: #667085; }
+@keyframes scene-reveal-line { 0%,8% { opacity: .18; } 24%,90% { opacity: 1; } 100% { opacity: .18; } }
+@keyframes scene-blink { 0%,55% { opacity: 1; } 56%,100% { opacity: 0; } }
+@keyframes scene-meter-change { 0%,100% { transform: scaleX(.6); } 50% { transform: scaleX(1); } }
+@keyframes scene-wave-draw { 0% { stroke-dashoffset: 220; } 70%,100% { stroke-dashoffset: 0; } }
+@keyframes scene-flow-travel { to { stroke-dashoffset: -108; } }
+@keyframes scene-pod-land { 0%,8% { opacity: .15; transform: translateY(-18px) scale(.9); } 30%,88% { opacity: 1; transform: none; } 100% { opacity: .15; transform: translateY(-18px) scale(.9); } }
+@keyframes scene-layer-rise { 0%,100% { transform: translateY(3px); } 50% { transform: translateY(-9px); } }
+@keyframes scene-packet-travel { 0% { transform: translateX(0); opacity: 0; } 10% { opacity: 1; } 80% { opacity: 1; } 100% { transform: translateX(194px); opacity: 0; } }
+@keyframes scene-page-flip { 0%,30%,100% { transform: scaleX(1); } 50% { transform: scaleX(.08); } 70% { transform: scaleX(1); } }
+@keyframes scene-step-highlight { 0%,100% { opacity: .55; } 35%,65% { opacity: 1; } }
+@keyframes scene-loop-circulate { to { stroke-dashoffset: -320; } }
+@keyframes scene-orbit-spin { to { transform: rotate(360deg); } }
+@keyframes scene-roadmap-draw { 0%,10% { stroke-dashoffset: 700; } 85%,100% { stroke-dashoffset: 0; } }
+@keyframes scene-bar-grow { 0%,10% { transform: scaleY(.12); } 60%,100% { transform: scaleY(1); } }
+@keyframes scene-growth-draw { 0%,20% { stroke-dashoffset: 450; } 80%,100% { stroke-dashoffset: 0; } }
+@media(max-width:767.98px) {
+    .showcase-visual { padding: 20px 12px; }
+    .showcase-artwork { margin-top: 22px; }
+    .service-scene text { font-size: 19px; }
+    .service-scene .scene-small { font-size: 16px; }
+    .service-scene .scene-code { font-size: 17px; }
+    .service-scene .scene-tiny { font-size: 12px; }
+    .service-scene .scene-layer-label { font-size: 20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+    .service-showcase .scene-motion { animation: none !important; opacity: 1 !important; transform: none !important; }
+}

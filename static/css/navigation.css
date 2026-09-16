@@ -1,0 +1,8 @@
+/* Six primary destinations fit on one row at standard desktop widths. */
+@media (min-width: 1200px) {
+    .navbar.navbar-expand-lg.site-nav-compact { flex-wrap: nowrap; gap: 28px; }
+    .navbar.site-nav-compact .navbar-collapse { flex-basis: auto; justify-content: flex-end; }
+    .navbar.site-nav-compact .navbar-nav { width: auto; margin-left: auto !important; gap: 24px; }
+    .navbar.site-nav-compact .navbar-nav .nav-link { font-size: 15px; }
+}
+.navbar.site-nav-compact .dropdown-item[aria-current="page"] { color: var(--brand-cyan-ink); }

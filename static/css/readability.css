@@ -1,0 +1,86 @@
+/* Shared type hierarchy: readable body copy, strong headings and clear diagrams. */
+:root { --text-muted: #536174; }
+body { font-size: 17px; font-weight: 400; color: #435168; line-height: 1.8; }
+h1,h2,h3 { font-weight: 700 !important; }
+h4,h5,h6 { font-weight: 600 !important; }
+p { line-height: 1.85; }
+.btn { font-size: 16px; font-weight: 600; }
+.section-eyebrow,.section-title > h5 { font-size: 16px; font-weight: 600; }
+.section-title :is(h1,h2) { font-size: clamp(28px,2.5vw,38px); line-height: 1.45; }
+.navbar-dark .navbar-nav .nav-link,.sticky-top.navbar-dark .navbar-nav .nav-link { font-weight: 600; color: #435168; }
+.dropdown-item { font-size: 15px; font-weight: 500; }
+.homepage #header-carousel .carousel-caption :is(h1,h2) { font-weight: 700 !important; }
+.homepage .hero-description { font-size: 19px; color: #435168; }
+.homepage .architecture-head,.homepage .architecture-core small { font-size: 13px; color: #536174; }
+.homepage .architecture-services strong { font-size: 18px; font-weight: 600; }
+.homepage .architecture-services small,.homepage .architecture-note { font-size: 15px; color: #435168; }
+.homepage .architecture-base { font-size: 14px; font-weight: 600; }
+.technology-card strong { font-size: 20px; }
+.technology-card small { font-size: 15px; color: #536174; }
+.technology-card-icon { width: 48px; height: 48px; font-size: 28px; }
+.service-item h4 { font-size: 23px; }
+.service-item p,.home-services .service-item p { font-size: 17px; color: #435168; }
+.service-item .service-icon { width: 54px; height: 54px; }
+.service-item .service-icon i { font-size: 26px; }
+.content-panel h2 { font-size: 26px; }
+.content-panel h3 { font-size: 22px; }
+.content-panel p,.content-panel li,.service-table { font-size: 17px; }
+.detail-layout aside h2 { font-size: 20px; }
+.related-links a,.section-nav a { font-size: 16px; }
+.page-breadcrumb ol { font-size: 14px; }
+.bg-header .page-subtitle { font-size: 17px; color: #435168; }
+.case-figure figcaption,.certificate-card p,.milestone-carousel small { font-size: 15px; color: #536174; }
+body > .bg-dark.mt-5 p,body > .bg-dark.mt-5 a { font-size: 15px; color: #536174 !important; }
+
+/* Keep the service artwork and its accompanying copy equally legible. */
+.service-showcase { --showcase-muted: #536174; }
+.showcase-tab { font-size: 17px; font-weight: 500; line-height: 1.55; }
+.showcase-tab[aria-selected="true"] { font-weight: 700; }
+.showcase-tab-label { min-height: 54px; }
+.showcase-track,.showcase-tab[aria-selected="true"] .showcase-track::after { height: 6px; }
+.showcase-panel { gap: 40px; }
+.showcase-visual-header { font-size: 12px; color: #536174; letter-spacing: .035em; font-weight: 500; flex-wrap: wrap; }
+.showcase-visual-caption { font-size: 15px; color: #536174; }
+.showcase-overline { font-size: 13px; font-weight: 600; letter-spacing: .055em; }
+.showcase-copy h3 { font-size: clamp(28px,2.3vw,34px); line-height: 1.45; margin-bottom: 22px; }
+.showcase-description { font-size: 20px; color: #435168; line-height: 1.8; margin-bottom: 24px; }
+.showcase-points { gap: 12px 20px; }
+.showcase-points li { font-size: 17px; color: #435168; font-weight: 500; }
+.showcase-detail { font-size: 17px; }
+.service-scene text { fill: #31465f; font-size: 18px; font-weight: 600; }
+.service-scene .scene-title { fill: #17243c; font-size: 20px; font-weight: 700; }
+.service-scene .scene-small { fill: #435168; font-size: 15px; font-weight: 500; }
+.service-scene .scene-tiny { fill: #086b87; font-size: 12px; font-weight: 600; }
+.service-scene .scene-code { fill: #086b87; font-size: 18px; font-weight: 500; }
+.service-scene .scene-big { font-size: 32px; font-weight: 700; }
+.service-scene .scene-layer-label { font-size: 20px; font-weight: 600; }
+.scene-box,.scene-terminal { stroke: #a9bdcc; stroke-width: 2; }
+.scene-soft,.scene-cloud,.scene-book,.scene-page,.scene-layer-side { stroke: #7fc8df; stroke-width: 2; }
+.scene-line,.scene-orbit { stroke: #9ab2c5; stroke-width: 2; }
+.scene-route { stroke: #b5c9d7; stroke-width: 2; }
+.scene-pod,.scene-layer { stroke-width: 2; }
+.scene-flow { stroke-width: 2.5; }
+@media (min-width:1200px) {
+    .navbar.site-nav-compact .navbar-nav .nav-link { font-size: 16px; }
+}
+@media (min-width:768px) and (max-width:1199.98px) {
+    .homepage .architecture-services strong { font-size: 16px; }
+    .showcase-panel { gap: 28px; }
+    .showcase-tab { font-size: 16px; }
+    .showcase-description { font-size: 18px; }
+}
+@media (max-width:767.98px) {
+    body { font-size: 16px; }
+    .homepage .hero-description { font-size: 17px; }
+    .section-title :is(h1,h2) { font-size: 28px; }
+    .showcase-tab { font-size: 16px; flex-basis: 180px; }
+    .showcase-copy h3 { font-size: 28px; }
+    .showcase-description { font-size: 18px; }
+    .showcase-points li,.showcase-detail { font-size: 16px; }
+    .showcase-visual-caption { font-size: 14px; }
+    .service-scene text { font-size: 19px; }
+    .service-scene .scene-small { font-size: 16px; }
+    .content-panel p,.content-panel li,.service-table { font-size: 16px; }
+    .technology-card strong { font-size: 18px; }
+    .technology-card small { font-size: 14px; }
+}

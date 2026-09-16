@@ -1,14 +1,35 @@
 /* Scoped to the product page's service catalogue. */
-.product-services .section-title h2 { color:#f4f8ff; }
-.product-services .section-title .section-eyebrow { color:#bde8f4 !important; }
-.product-services .technology-list li {
-    color:#eaf8fc;
-    background: #233f5e;
-    border-color: #45617f;
+body > .container-fluid.py-5.product-services {
+    background: #fff;
+}
+.product-services .section-title h2 { color:var(--dark); }
+.product-services .section-title .section-eyebrow { color:var(--brand-cyan-ink) !important; }
+body .product-services .technology-list li {
+    color:#526078;
+    background: transparent;
+}
+body .product-services .technology-list li + li {
+    border-left-color: #cbd5e1;
 }
 .product-services .service-item {
     background: #fff !important;
-    border-color: #dce5f1;
+    border-color: var(--site-border);
+    box-shadow: 0 6px 24px #19305708;
 }
-.product-services .service-item h4 { color:#1c304c; }
-.product-services .service-item p { color:#52647d; }
+.product-services .service-item h4 { color:var(--dark); }
+.product-services .service-item p { color:#526078; }
+.product-services .service-item a.btn.service-detail-link {
+    color:var(--brand-cyan-ink) !important;
+    background-color:var(--brand-cyan-soft) !important;
+    border-color:var(--brand-cyan-border) !important;
+}
+.product-services .service-item a.btn.service-detail-link:is(:hover, :focus-visible) {
+    color:#066780 !important;
+    background-color:#dceff5 !important;
+    border-color:#aacfdc !important;
+}
+.product-services .service-item a.btn.service-detail-link:active {
+    color:#054b60 !important;
+    background-color:#cce6ef !important;
+    border-color:#8fbece !important;
+}
