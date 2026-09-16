@@ -1,0 +1,21 @@
+/* Homepage business section only; keep other service pages unchanged. */
+.home-services .section-title h2 { color:#f4f8ff; }
+.home-services .section-title .section-eyebrow { color:#bde8f4 !important; }
+.home-services .technology-list li {
+    color:#eaf8fc;
+    background: #233f5e;
+    border-color: #45617f;
+}
+.home-services .service-item {
+    background: #fff !important;
+    border-color: #dce5f1;
+}
+.home-services .service-item h4 { color:#1c304c; }
+.home-services .service-item p { color:#52647d; }
+.home-services .row > div > .bg-primary {
+    background: #244e82 !important;
+    border: 1px solid #5378a6;
+}
+.home-services .row > div > .bg-primary h3,
+.home-services .row > div > .bg-primary h2 { color:#fff !important; }
+.home-services .row > div > .bg-primary p { color:#dce8f8 !important; }

@@ -1,0 +1,53 @@
+/* Loaded only by index1.html; every rule is confined to its inquiry section. */
+body > .home-inquiry.container-fluid.py-5 {
+    background: linear-gradient(115deg, #f4f7fc, #edf3fb);
+    border-top: 1px solid #e0e8f3;
+    border-bottom: 1px solid #e0e8f3;
+}
+.home-inquiry > .container > .row { align-items: center; }
+.home-inquiry .section-title { max-width: 600px; }
+.home-inquiry .section-title h1 { font-size: clamp(26px, 2.5vw, 36px); line-height: 1.6; }
+.home-inquiry .inquiry-benefits { margin-top: 28px; margin-bottom: 12px; }
+.home-inquiry .inquiry-benefits h5 { display: flex; align-items: center; font-size: 16px; font-weight: 500; }
+.home-inquiry .inquiry-benefits i {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; flex: 0 0 34px;
+    border-radius: 10px; background: #e3edfc; font-size: 14px;
+}
+.home-inquiry .inquiry-hotline {
+    padding-top: 26px; margin-top: 28px !important;
+    border-top: 1px solid #d9e3f0; max-width: 540px;
+}
+.home-inquiry .inquiry-hotline > .bg-primary {
+    width: 50px !important; height: 50px !important; flex-shrink: 0;
+    background: #e1ebfb !important; border: 1px solid #d0dff5;
+}
+.home-inquiry .inquiry-hotline i { color:#06a3da !important; }
+.home-inquiry .inquiry-hotline h5 { color:#62738c; font-size: 14px; font-weight: 400; }
+.home-inquiry .inquiry-hotline h4 { font-size: clamp(22px, 2vw, 27px); letter-spacing: .02em; }
+.home-inquiry .inquiry-card {
+    background: #fff; border: 1px solid #dae4f1;
+    border-radius: 18px !important; padding: 32px !important;
+    box-shadow: 0 16px 40px #2342690c;
+}
+.home-inquiry form { width: 100%; }
+.home-inquiry label { display: block; margin-bottom: 8px; color:#344860; font-size: 14px; font-weight: 500; }
+.home-inquiry .form-control, .home-inquiry .form-select {
+    background-color: #f7f9fc !important; border: 1px solid #dce4ef !important;
+    border-radius: 8px; padding: 12px 14px; font-size: 14px;
+    color:#263c59; transition: border-color 160ms ease, background-color 160ms ease;
+}
+.home-inquiry .form-select { padding-right: 40px; }
+.home-inquiry .form-control::placeholder { color:#8794a6; opacity: 1; }
+.home-inquiry .form-control:focus, .home-inquiry .form-select:focus {
+    background-color: #fff !important; border-color: #5988dc !important;
+    box-shadow: 0 0 0 3px #2463eb12 !important;
+}
+.home-inquiry textarea { min-height: 104px; resize: vertical; }
+.home-inquiry .btn-dark { background:#06a3da; border-color:#06a3da; margin-top: 4px; }
+.home-inquiry .btn-dark:hover, .home-inquiry .btn-dark:focus-visible { background:#087d9e; border-color:#087d9e; }
+@media (max-width: 575.98px) {
+    .home-inquiry .inquiry-card { padding: 24px !important; }
+    .home-inquiry .inquiry-benefits { margin-top: 20px; margin-bottom: 0; }
+    .home-inquiry .inquiry-hotline { padding-top: 20px; }
+}

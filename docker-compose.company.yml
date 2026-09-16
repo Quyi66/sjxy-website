@@ -1,0 +1,10 @@
+services:
+  company-web:
+    image: opsmind-web:2.1.10
+    restart: unless-stopped
+    container_name: company-web
+    ports:
+      - "8088:80"
+    volumes:
+      - "/opt/company-site:/usr/share/nginx/html:ro"
+    entrypoint: ["nginx", "-g", "daemon off;"]

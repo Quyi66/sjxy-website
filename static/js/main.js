@@ -1,126 +1,239 @@
-(function ($) {
-    "use strict";
+(function () {
+    'use strict';
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var desktop = window.matchMedia('(min-width: 992px) and (hover: hover)');
 
-    // Spinner
-    var spinner = function () {
-        setTimeout(function () {
-            if ($('#spinner').length > 0) {
-                $('#spinner').removeClass('show');
-            }
-        }, 1);
-    };
-    spinner();
-    
-    
-    // Initiate the wowjs
-    new WOW().init();
-
-
-    // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
-        } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
+    // Reserve the measured navbar height so fixing it never covers page content.
+    document.querySelectorAll('.navbar.navbar-dark').forEach(function (navbar) {
+        var spacer = document.createElement('div');
+        spacer.setAttribute('aria-hidden', 'true');
+        spacer.className = 'navbar-spacer';
+        navbar.parentNode.insertBefore(spacer, navbar);
+        function syncNavbarHeight() {
+            var height = Math.ceil(navbar.getBoundingClientRect().height);
+            spacer.style.height = height + 'px';
+            document.documentElement.style.setProperty('--site-navbar-height', height + 'px');
         }
-    });
-    
-    // Dropdown on mouse hover
-    const $dropdown = $(".dropdown");
-    const $dropdownToggle = $(".dropdown-toggle");
-    const $dropdownMenu = $(".dropdown-menu");
-    const showClass = "show";
-    
-    $(window).on("load resize", function() {
-        if (this.matchMedia("(min-width: 992px)").matches) {
-            $dropdown.hover(
-            function() {
-                const $this = $(this);
-                $this.addClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "true");
-                $this.find($dropdownMenu).addClass(showClass);
-            },
-            function() {
-                const $this = $(this);
-                $this.removeClass(showClass);
-                $this.find($dropdownToggle).attr("aria-expanded", "false");
-                $this.find($dropdownMenu).removeClass(showClass);
-            }
-            );
-        } else {
-            $dropdown.off("mouseenter mouseleave");
-        }
+        syncNavbarHeight();
+        navbar.classList.add('site-fixed-navbar');
+        syncNavbarHeight();
+        if ('ResizeObserver' in window) new ResizeObserver(syncNavbarHeight).observe(navbar);
+        window.addEventListener('resize', syncNavbarHeight);
+        navbar.addEventListener('shown.bs.collapse', syncNavbarHeight);
+        navbar.addEventListener('hidden.bs.collapse', syncNavbarHeight);
     });
 
-
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
-    });
-    
-    
-    // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
-
-
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        dots: true,
-        loop: true,
-        center: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:2
-            },
-            992:{
-                items:3
+    // Keep artwork and CTA fixed; transition only the two text messages.
+    document.querySelectorAll('.hero-text-carousel').forEach(function (element) {
+        var messages = element.querySelectorAll('.hero-message');
+        var current = 0;
+        var busy = false;
+        var hovering = false;
+        var timer;
+        function updatePlayback() {
+            clearTimeout(timer);
+            if (!busy && !reducedMotion.matches && !document.hidden && !hovering && !element.contains(document.activeElement)) {
+                timer = setTimeout(function () { changeMessage(1); }, 8000);
             }
         }
-    });
-
-
-    // Vendor carousel
-    $('.vendor-carousel').owlCarousel({
-        loop: true,
-        margin: 45,
-        dots: false,
-        loop: true,
-        autoplay: true,
-        smartSpeed: 1000,
-        responsive: {
-            0:{
-                items:2
-            },
-            576:{
-                items:4
-            },
-            768:{
-                items:6
-            },
-            992:{
-                items:8
-            }
+        function changeMessage(direction) {
+            if (busy || messages.length < 2) return;
+            busy = true;
+            clearTimeout(timer);
+            var previous = messages[current];
+            previous.classList.add('is-leaving');
+            setTimeout(function () {
+                previous.classList.remove('is-current', 'is-leaving');
+                previous.setAttribute('aria-hidden', 'true');
+                current = (current + direction + messages.length) % messages.length;
+                messages[current].classList.add('is-current');
+                messages[current].setAttribute('aria-hidden', 'false');
+                setTimeout(function () {
+                    busy = false;
+                    updatePlayback();
+                }, reducedMotion.matches ? 0 : 160);
+            }, reducedMotion.matches ? 0 : 160);
         }
+        element.querySelectorAll('[data-hero-direction]').forEach(function (button) {
+            button.addEventListener('click', function () { changeMessage(Number(button.dataset.heroDirection)); });
+        });
+        var touchStart;
+        element.addEventListener('touchstart', function (event) {
+            touchStart = event.touches.length === 1 ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
+        }, { passive: true });
+        element.addEventListener('touchend', function (event) {
+            if (!touchStart) return;
+            var dx = event.changedTouches[0].clientX - touchStart.x;
+            var dy = event.changedTouches[0].clientY - touchStart.y;
+            touchStart = null;
+            if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) changeMessage(dx < 0 ? 1 : -1);
+        }, { passive: true });
+        element.addEventListener('mouseenter', function () { hovering = true; updatePlayback(); });
+        element.addEventListener('mouseleave', function () { hovering = false; updatePlayback(); });
+        element.addEventListener('focusin', updatePlayback);
+        element.addEventListener('focusout', function () { setTimeout(updatePlayback, 0); });
+        document.addEventListener('visibilitychange', updatePlayback);
+        if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', updatePlayback);
+        updatePlayback();
     });
-    
-})(jQuery);
+    // One controller owns navbar dropdowns. Bootstrap hover opening moves focus
+    // to the trigger, which used to keep menus open and conflict with clicks.
+    var navMenus = [];
+    document.querySelectorAll('.navbar .dropdown').forEach(function (dropdown) {
+        var toggle = dropdown.querySelector('.dropdown-toggle');
+        var menu = dropdown.querySelector('.dropdown-menu');
+        if (!toggle || !menu) return;
+        // Bootstrap delegates keydown in the capture phase to .dropdown-menu.
+        // Give this independently controlled menu its own class as well.
+        menu.classList.remove('dropdown-menu');
+        menu.classList.add('nav-submenu');
+        toggle.removeAttribute('data-bs-toggle');
+        toggle.setAttribute('role', 'button');
+        toggle.setAttribute('aria-expanded', 'false');
+        if (!menu.id) menu.id = 'nav-submenu-' + navMenus.length;
+        toggle.setAttribute('aria-controls', menu.id);
+        var closeTimer;
+        var open = false;
+        var hoverOpened = false;
+        var keyboardMode = false;
+        function setOpen(next, fromHover) {
+            clearTimeout(closeTimer);
+            if (next) navMenus.forEach(function (other) { if (other.element !== dropdown) other.close(); });
+            open = next;
+            hoverOpened = !!fromHover;
+            dropdown.classList.toggle('nav-open', next);
+            toggle.classList.toggle('show', next);
+            menu.classList.toggle('show', next);
+            toggle.setAttribute('aria-expanded', String(next));
+        }
+        navMenus.push({ element: dropdown, close: function () { setOpen(false); } });
+        dropdown.addEventListener('pointerenter', function (event) {
+            clearTimeout(closeTimer);
+            if (desktop.matches && event.pointerType !== 'touch' && !open) {
+                keyboardMode = false;
+                setOpen(true, true);
+            }
+        });
+        dropdown.addEventListener('pointerleave', function () {
+            if (desktop.matches && !(keyboardMode && dropdown.contains(document.activeElement))) {
+                closeTimer = setTimeout(function () { setOpen(false); }, 180);
+            }
+        });
+        toggle.addEventListener('click', function (event) {
+            event.preventDefault();
+            // First click after hover keeps the menu open; next click closes it.
+            setOpen(hoverOpened || !open);
+        });
+        dropdown.addEventListener('keydown', function (event) {
+            keyboardMode = true;
+            if (event.key === 'Escape') {
+                if (open) { event.preventDefault(); event.stopPropagation(); setOpen(false); toggle.focus(); }
+                return;
+            }
+            if (event.target === toggle && event.key === ' ') {
+                event.preventDefault(); setOpen(!open); return;
+            }
+            if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+            event.preventDefault();
+            var items = Array.prototype.slice.call(menu.querySelectorAll('a.dropdown-item'));
+            if (!items.length) return;
+            var index = items.indexOf(document.activeElement);
+            setOpen(true);
+            index = index < 0 ? (event.key === 'ArrowDown' ? 0 : items.length - 1) :
+                (index + (event.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+            items[index].focus();
+        });
+        dropdown.addEventListener('focusout', function (event) {
+            if (!dropdown.contains(event.relatedTarget)) setOpen(false);
+        });
+    });
+    document.addEventListener('click', function (event) {
+        navMenus.forEach(function (menu) { if (!menu.element.contains(event.target)) menu.close(); });
+    });
+    function closeNavMenus() { navMenus.forEach(function (menu) { menu.close(); }); }
+    if (desktop.addEventListener) desktop.addEventListener('change', closeNavMenus);
+    window.addEventListener('blur', closeNavMenus);
+    document.querySelectorAll('.navbar-collapse').forEach(function (element) {
+        element.addEventListener('hide.bs.collapse', closeNavMenus);
+    });
 
+    // Company milestones use the original horizontal Owl Carousel structure.
+    if (window.jQuery && window.jQuery.fn && window.jQuery.fn.owlCarousel) {
+        window.jQuery('.testimonial-carousel').owlCarousel({
+            autoplay: !reducedMotion.matches,
+            smartSpeed: reducedMotion.matches ? 0 : 550,
+            margin: 24,
+            autoplayTimeout: 5500,
+            autoplayHoverPause: true,
+            dots: true,
+            nav: false,
+            onInitialized: function () {
+                // This Owl version renders pagination as divs.
+                window.jQuery('.milestone-carousel .owl-dot').each(function (index) {
+                    this.setAttribute('role', 'button');
+                    this.setAttribute('tabindex', '0');
+                    this.setAttribute('aria-label', '跳转到第 ' + (index + 1) + ' 项大事记');
+                    this.addEventListener('keydown', function (event) {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault(); this.click();
+                        }
+                    });
+                });
+            },
+            loop: true,
+            center: true,
+            responsive: {
+                0: { items: 1 },
+                576: { items: 1 },
+                768: { items: 2 },
+                992: { items: 3 }
+            }
+        });
+    }
+
+    // No WOW or counting animations. All copy stays available in the document.
+    var pending = [];
+    var observer;
+    function revealAll() {
+        pending.forEach(function (element) {
+            element.classList.remove('is-pending');
+            element.classList.add('is-visible');
+        });
+        if (observer) observer.disconnect();
+    }
+    if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+        observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.remove('is-pending');
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0, rootMargin: '0px 0px 32px 0px' });
+        document.querySelectorAll('body > .container-fluid.wow').forEach(function (element) {
+            if (element.getBoundingClientRect().top < window.innerHeight || element.classList.contains('bg-dark')) return;
+            element.classList.add('presentation-reveal', 'is-pending');
+            pending.push(element);
+            observer.observe(element);
+        });
+        document.addEventListener('focusin', function (event) {
+            var parent = event.target.closest('.is-pending');
+            if (parent) { parent.classList.remove('is-pending'); observer.unobserve(parent); }
+        });
+    }
+    if (reducedMotion.addEventListener) {
+        reducedMotion.addEventListener('change', function () { if (reducedMotion.matches) revealAll(); });
+    }
+    window.addEventListener('beforeprint', revealAll);
+    var topButton = document.querySelector('.back-to-top');
+    if (topButton) {
+        topButton.setAttribute('aria-label', '\u8fd4\u56de\u9876\u90e8');
+        function updateTopButton() { topButton.style.display = window.scrollY > 480 ? 'inline-flex' : 'none'; }
+        window.addEventListener('scroll', updateTopButton, { passive: true });
+        updateTopButton();
+        topButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+        });
+    }
+}());
