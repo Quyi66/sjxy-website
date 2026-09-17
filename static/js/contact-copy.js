@@ -36,7 +36,7 @@
             clearTimeout(resetTimer);
             if (copied) {
                 button.dataset.copied = 'true';
-                button.textContent = button.dataset.copyLabel ? '已复制' + button.dataset.copyLabel : '已复制：' + value;
+                // Keep the original label and geometry; the live region announces success.
                 if (status) status.textContent = button.dataset.copyLabel ? button.dataset.copyLabel + '已复制到剪贴板。' : '已复制：' + value;
                 resetTimer = setTimeout(function () {
                     button.innerHTML = original;

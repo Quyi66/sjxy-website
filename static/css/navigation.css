@@ -1,8 +1,53 @@
-/* Six primary destinations fit on one row at standard desktop widths. */
-@media (min-width: 1200px) {
-    .navbar.navbar-expand-lg.site-nav-compact { flex-wrap: nowrap; gap: 28px; }
+/* Shared navigation typography and desktop layout live here. */
+.navbar-dark .navbar-nav .nav-link,
+.sticky-top.navbar-dark .navbar-nav .nav-link { font-weight: 600; color: #435168; }
+@media (min-width: 992px) {
+    .navbar.navbar-expand-lg.site-nav-compact { flex-wrap: nowrap; gap: 20px; }
+    .navbar.site-nav-compact .navbar-brand .brand-title { font-size: 20px; }
     .navbar.site-nav-compact .navbar-collapse { flex-basis: auto; justify-content: flex-end; }
-    .navbar.site-nav-compact .navbar-nav { width: auto; margin-left: auto !important; gap: 24px; }
+    .navbar.site-nav-compact .navbar-nav { width: auto; margin-left: auto !important; gap: 12px; }
     .navbar.site-nav-compact .navbar-nav .nav-link { font-size: 15px; }
+    .navbar.site-nav-compact :is(.nav-submenu,.dropdown-menu) { width: 224px; min-width: 224px; }
+    .navbar.site-nav-compact .nav-products > :is(.nav-submenu,.dropdown-menu) { width: 320px; }
+    .navbar.site-nav-compact .nav-about > :is(.nav-submenu,.dropdown-menu) { left: auto; right: 0; }
+    .navbar.site-nav-compact .dropdown-item { font-size: 15px; font-weight: 500; }
+    .navbar.site-nav-compact .dropdown-item[aria-current="page"] { font-weight: 600; }
+}
+@media (min-width: 992px) and (max-width: 1439.98px) {
+    .navbar.site-nav-compact { padding: 12px 28px !important; }
+    .navbar.site-nav-compact .navbar-nav > .nav-link:last-child { padding: 8px 16px; }
+}
+@media (min-width: 1200px) {
+    .navbar.navbar-expand-lg.site-nav-compact { gap: 28px; }
+    .navbar.site-nav-compact .navbar-nav { gap: 24px; }
+    .navbar.site-nav-compact .navbar-nav .nav-link { font-size: 16px; }
 }
 .navbar.site-nav-compact .dropdown-item[aria-current="page"] { color: var(--brand-cyan-ink); }
+
+.navbar.site-nav-compact .nav-link { min-height: 44px; border-radius: 6px; }
+/* The shared ::before marker owns the active indicator; an inset shadow
+   would trace the rounded control and create a second, curved underline. */
+.navbar.site-nav-compact .nav-open > .dropdown-toggle { background: var(--brand-cyan-soft); }
+.navbar.site-nav-compact :is(.nav-submenu,.dropdown-menu) {
+    padding: 8px; border: 1px solid var(--site-border); border-radius: 8px;
+    box-shadow: 0 12px 28px #17243c12;
+}
+.navbar.site-nav-compact .dropdown-item { min-height: 44px; display: flex; align-items: center; }
+.navbar.site-nav-compact :is(.nav-link,.dropdown-item,.navbar-toggler):focus-visible {
+    outline: 2px solid var(--brand-cyan-ink) !important; outline-offset: 3px;
+}
+.navbar.site-nav-compact .navbar-toggler {
+    min-width: 44px; min-height: 44px; color: var(--brand-cyan-ink); border-color: var(--site-border);
+}
+.navbar.site-nav-compact .navbar-toggler[aria-expanded="true"] { background: var(--brand-cyan-soft); }
+.navbar.site-nav-compact .navbar-nav > .nav-link:last-child { background: var(--brand-cyan-ink); }
+@media (max-width:991.98px) {
+    .navbar.site-nav-compact .navbar-brand { min-width: 0; flex-shrink: 1; }
+    .navbar.site-nav-compact .navbar-brand .brand-title { white-space: normal; line-height: 1.5; }
+    .navbar.site-nav-compact .navbar-toggler { flex-shrink: 0; }
+    .navbar.site-nav-compact .navbar-nav { align-items: stretch; }
+    .navbar.site-nav-compact .nav-link { padding-inline: 12px; }
+    .navbar.site-nav-compact :is(.nav-submenu,.dropdown-menu) {
+        background: var(--light); border: 0; border-left: 2px solid var(--brand-cyan-border); box-shadow: none;
+    }
+}

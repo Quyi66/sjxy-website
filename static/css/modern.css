@@ -176,7 +176,7 @@ img[src*="abstract-"]:not(.blog-img img):not(.team-img img) { border: 1px solid 
 .milestone-carousel .testimonial-item { background: #fff !important; border-color: var(--site-border); border-radius: 8px; box-shadow: none; }
 .milestone-carousel .testimonial-item::after { display: none; }
 .milestone-carousel h4 { color: var(--brand-cyan-ink) !important; }
-.milestone-carousel small { color: #667085; }
+.milestone-carousel small { display: block; min-height: 3.7em; color: #667085; }
 .milestone-carousel .owl-item.center .testimonial-item { background: var(--brand-cyan-soft) !important; border-color: var(--brand-cyan-border); box-shadow: none; transform: none; }
 .milestone-carousel .owl-item.center h4 { color: var(--brand-cyan-ink) !important; }
 .milestone-carousel .owl-item.center small { color: #586174; }
@@ -199,10 +199,6 @@ body > .container-fluid.text-white:last-of-type p,body > .container-fluid.text-w
 .skip-link:focus { top: 12px; }
 
 @media (min-width:992px) and (max-width:1439.98px) {
-    .navbar-dark { padding: 12px 28px !important; gap: 6px; }
-    .navbar-dark .navbar-nav { gap: 10px; }
-    .navbar-dark .navbar-nav .nav-link { font-size: 13px; }
-    .navbar-dark .navbar-nav > .nav-link:last-child { padding: 8px 16px; }
     .hero-layout { gap: 40px; }
 }
 @media (max-width:991.98px) {

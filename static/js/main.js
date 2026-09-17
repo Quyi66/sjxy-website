@@ -29,10 +29,11 @@
         var current = 0;
         var busy = false;
         var hovering = false;
+        var inView = !('IntersectionObserver' in window);
         var timer;
         function updatePlayback() {
             clearTimeout(timer);
-            if (!busy && !reducedMotion.matches && !document.hidden && !hovering && !element.contains(document.activeElement)) {
+            if (!busy && inView && !reducedMotion.matches && !document.hidden && !hovering && !element.contains(document.activeElement)) {
                 timer = setTimeout(function () { changeMessage(1); }, 8000);
             }
         }
@@ -74,6 +75,10 @@
         element.addEventListener('focusout', function () { setTimeout(updatePlayback, 0); });
         document.addEventListener('visibilitychange', updatePlayback);
         if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', updatePlayback);
+        if ('IntersectionObserver' in window) new IntersectionObserver(function (entries) {
+            inView = entries[0].isIntersecting;
+            updatePlayback();
+        }, { threshold: 0.1 }).observe(element);
         updatePlayback();
     });
     // One controller owns navbar dropdowns. Bootstrap hover opening moves focus
@@ -155,13 +160,31 @@
     window.addEventListener('blur', closeNavMenus);
     document.querySelectorAll('.navbar-collapse').forEach(function (element) {
         element.addEventListener('hide.bs.collapse', closeNavMenus);
+        element.addEventListener('keydown', function (event) {
+            var trigger = element.closest('.navbar').querySelector('.navbar-toggler');
+            if (event.key !== 'Escape' || !trigger || trigger.getAttribute('aria-expanded') !== 'true' || !window.bootstrap) return;
+            event.preventDefault();
+            function closeMenu() {
+                var collapse = window.bootstrap.Collapse.getInstance(element);
+                if (collapse) collapse.hide();
+                trigger.focus();
+            }
+            if (element.classList.contains('collapsing')) {
+                element.addEventListener('shown.bs.collapse', closeMenu, { once: true });
+            } else closeMenu();
+        });
+        element.addEventListener('hidden.bs.collapse', function () {
+            if (element.contains(document.activeElement)) {
+                element.closest('.navbar').querySelector('.navbar-toggler').focus();
+            }
+        });
     });
 
     // Company milestones use the original horizontal Owl Carousel structure.
     if (window.jQuery && window.jQuery.fn && window.jQuery.fn.owlCarousel) {
         window.jQuery('.testimonial-carousel').owlCarousel({
-            autoplay: !reducedMotion.matches,
-            smartSpeed: reducedMotion.matches ? 0 : 550,
+            autoplay: false,
+            smartSpeed: reducedMotion.matches ? 0 : 280,
             margin: 24,
             autoplayTimeout: 5500,
             autoplayHoverPause: true,
@@ -188,6 +211,32 @@
                 768: { items: 2 },
                 992: { items: 3 }
             }
+        });
+        window.jQuery('.testimonial-carousel').each(function () {
+            var element = this;
+            var carousel = window.jQuery(element);
+            var inView = !('IntersectionObserver' in window);
+            var hovering = false;
+            function updatePlayback() {
+                var instance = carousel.data('owl.carousel');
+                if (instance) {
+                    instance.settings.smartSpeed = reducedMotion.matches ? 0 : 280;
+                    instance.options.smartSpeed = instance.settings.smartSpeed;
+                }
+                var play = inView && !hovering && !document.hidden && !reducedMotion.matches && !element.contains(document.activeElement);
+                carousel.trigger(play ? 'play.owl.autoplay' : 'stop.owl.autoplay', play ? [5500] : []);
+            }
+            element.addEventListener('mouseenter', function () { hovering = true; updatePlayback(); });
+            element.addEventListener('mouseleave', function () { hovering = false; updatePlayback(); });
+            element.addEventListener('focusin', updatePlayback);
+            element.addEventListener('focusout', function () { setTimeout(updatePlayback, 0); });
+            document.addEventListener('visibilitychange', updatePlayback);
+            if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', updatePlayback);
+            if ('IntersectionObserver' in window) new IntersectionObserver(function (entries) {
+                inView = entries[0].isIntersecting;
+                updatePlayback();
+            }, { threshold: 0.1 }).observe(element);
+            updatePlayback();
         });
     }
 

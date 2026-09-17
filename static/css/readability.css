@@ -7,7 +7,6 @@ p { line-height: 1.85; }
 .btn { font-size: 16px; font-weight: 600; }
 .section-eyebrow,.section-title > h5 { font-size: 16px; font-weight: 600; }
 .section-title :is(h1,h2) { font-size: clamp(28px,2.5vw,38px); line-height: 1.45; }
-.navbar-dark .navbar-nav .nav-link,.sticky-top.navbar-dark .navbar-nav .nav-link { font-weight: 600; color: #435168; }
 .dropdown-item { font-size: 15px; font-weight: 500; }
 .homepage #header-carousel .carousel-caption :is(h1,h2) { font-weight: 700 !important; }
 .homepage .hero-description { font-size: 19px; color: #435168; }
@@ -22,8 +21,8 @@ p { line-height: 1.85; }
 .service-item p,.home-services .service-item p { font-size: 17px; color: #435168; }
 .service-item .service-icon { width: 54px; height: 54px; }
 .service-item .service-icon i { font-size: 26px; }
-.content-panel h2 { font-size: 26px; }
-.content-panel h3 { font-size: 22px; }
+.content-panel h2 { font-size: 26px; line-height: 1.45; margin-bottom: 20px; }
+.content-panel h3 { font-size: 21px; line-height: 1.5; margin-top: 28px; margin-bottom: 12px; }
 .content-panel p,.content-panel li,.service-table { font-size: 17px; }
 .detail-layout aside h2 { font-size: 20px; }
 .related-links a,.section-nav a { font-size: 16px; }
@@ -60,8 +59,95 @@ body > .bg-dark.mt-5 p,body > .bg-dark.mt-5 a { font-size: 15px; color: #536174 
 .scene-route { stroke: #b5c9d7; stroke-width: 2; }
 .scene-pod,.scene-layer { stroke-width: 2; }
 .scene-flow { stroke-width: 2.5; }
-@media (min-width:1200px) {
-    .navbar.site-nav-compact .navbar-nav .nav-link { font-size: 16px; }
+
+/* Presentation outside service showcases. Keep their typography and controls intact. */
+:root {
+    --ui-space-section: 64px;
+    --ui-space-compact: 48px;
+    --ui-radius-control: 6px;
+    --ui-motion-fast: 180ms;
+    --ui-motion-panel: 280ms;
+    --ui-ease: cubic-bezier(.2,.7,.2,1);
+}
+.homepage > .container-fluid.py-5:not([data-service-showcase]):not(.bg-dark) {
+    padding-block: var(--ui-space-section) !important;
+    border-bottom: 0;
+}
+.homepage > .container-fluid.py-5:not([data-service-showcase]):not(.bg-dark) > .container.py-5 {
+    padding-block: 0 !important;
+}
+.homepage > #main-content > .container { padding-block: 0 !important; }
+.homepage > .container-fluid.ui-section-compact.py-5:not([data-service-showcase]):not(.bg-dark) { padding-block: var(--ui-space-compact) !important; }
+.homepage .ui-section-compact .section-title h2 { font-size: clamp(26px,2vw,32px); }
+.homepage > .container-fluid:has(.milestone-carousel) { background: var(--light); }
+.section-title:not([data-service-showcase] *) :is(h1,h2) {
+    font-size: clamp(28px,2.2vw,36px); line-height: 1.45;
+}
+.section-eyebrow:not([data-service-showcase] *),
+.section-title:not([data-service-showcase] *) > h5 {
+    font-size: 14px; font-weight: 600; letter-spacing: .04em;
+}
+.homepage .expertise-strip > .container { padding-block: var(--ui-space-compact); }
+.homepage .expertise-heading h2 { font-size: clamp(22px,1.8vw,26px); }
+.technology-card { border-color: var(--site-border); box-shadow: none; }
+.technology-card:hover { transform: none; box-shadow: 0 4px 16px #17243c08; }
+.technology-card-icon { border-radius: 8px; }
+.technology-card-icon :is(i,svg) { width: 28px; height: 28px; text-align: center; }
+.homepage img[src*="abstract-"] { object-fit: contain !important; padding: clamp(16px,2vw,32px); }
+
+/* Open reading column; secondary navigation keeps its own quiet surface. */
+.inner-page .page-content { padding-block: var(--ui-space-section); }
+.detail-layout > article { min-width: 0; }
+.detail-layout > article > .content-panel {
+    padding: 0 0 32px; margin: 0 0 32px;
+    border: 0; border-bottom: 1px solid var(--site-border); border-radius: 0;
+    background: transparent;
+}
+.detail-layout > article > .content-panel:last-child { margin-bottom: 0; border-bottom: 0; }
+.detail-layout > article > .content-panel > :first-child { margin-top: 0; }
+.detail-layout > article :is(p,.service-list) { max-width: 48em; }
+.detail-layout .service-list li { padding-block: 5px; line-height: 1.8; }
+.detail-layout .section-nav { margin-bottom: 32px; padding: 20px 24px; }
+.detail-layout aside .content-panel { border-color: transparent; padding: 24px; }
+.detail-layout aside .content-panel h2 { margin-bottom: 16px; }
+.detail-layout--long > aside { padding: 4px; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.inner-page :is(section[id],main[id]),.homepage #main-content {
+    scroll-margin-top: calc(var(--site-navbar-height,84px) + 24px);
+}
+.case-figure { border-radius: 8px; padding: 24px; }
+.case-figure img { max-width: 100%; height: auto; }
+
+/* Control geometry stays stable between hover, focus and feedback states. */
+.btn:not([data-service-showcase] *) {
+    border-radius: var(--ui-radius-control); min-height: 44px;
+    gap: 10px; line-height: 1.5;
+    transition: background-color var(--ui-motion-fast) ease, border-color var(--ui-motion-fast) ease,
+        color var(--ui-motion-fast) ease, box-shadow var(--ui-motion-fast) ease;
+}
+.btn:not([data-service-showcase] *) :is(.bi-arrow-right,[aria-hidden="true"]) { flex-shrink: 0; }
+.btn-primary:not([data-service-showcase] *):not(.service-detail-link) {
+    background: var(--brand-cyan-ink) !important; border-color: var(--brand-cyan-ink) !important;
+}
+.btn-primary:not([data-service-showcase] *):not(.service-detail-link):hover {
+    background: #066a86 !important; border-color: #066a86 !important;
+}
+.btn-outline-primary:not([data-service-showcase] *):hover { box-shadow: 0 0 0 1px var(--brand-cyan-border); }
+.btn:not([data-service-showcase] *):focus-visible,
+.contact-copy-inline:focus-visible { outline: 2px solid var(--brand-cyan-ink) !important; outline-offset: 4px; }
+.contact-info-icon { flex: 0 0 48px; width: 48px; height: 48px; }
+.contact-copy-status { min-height: 3.6em; line-height: 1.8; overflow-wrap: anywhere; }
+.presentation-reveal:not([data-service-showcase]) {
+    transition: opacity var(--ui-motion-panel) var(--ui-ease),transform var(--ui-motion-panel) var(--ui-ease);
+}
+@media (max-width:991.98px) {
+    :root { --ui-space-section: 48px; --ui-space-compact: 32px; }
+}
+@media (max-width:767.98px) {
+    .detail-layout > article > .content-panel { padding-bottom: 24px; margin-bottom: 24px; }
+    .detail-layout .section-nav { padding: 16px 20px; }
+    .detail-layout--long > aside { padding: 0; scrollbar-gutter: auto; }
+    .case-figure { padding: 16px; }
+    .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
 }
 @media (min-width:768px) and (max-width:1199.98px) {
     .homepage .architecture-services strong { font-size: 16px; }

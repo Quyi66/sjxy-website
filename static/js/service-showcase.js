@@ -37,6 +37,7 @@
     document.querySelectorAll('[data-service-showcase]').forEach(function (section, group) {
         var catalogue = section.dataset.serviceShowcase === 'catalogue';
         var products = section.dataset.serviceShowcase === 'products';
+        var services = section.dataset.serviceShowcase === 'services';
         var source = section.querySelector('.container > .row');
         if (!source) return;
         var originals = catalogue ? source.querySelectorAll(':scope > .col-lg-4 > .rounded') : source.querySelectorAll('.service-item');
@@ -47,17 +48,21 @@
             if (!link || !title) return;
             var scene = scenes[link.getAttribute('href')];
             if (!scene) return;
+            var pointElements = card.querySelectorAll(catalogue ? '.d-flex > span' : '.showcase-points li');
+            var points = pointElements.length ? Array.from(pointElements).map(function (point) {
+                return point.textContent.trim();
+            }) : scene.nodes;
             items.push({ title: title.textContent.trim(), href: link.getAttribute('href'), scene: scene,
                 description: card.querySelector('p') ? card.querySelector('p').textContent.trim() : (card.querySelector('small') && card.querySelector('small').textContent.trim() !== '简单介绍' ? card.querySelector('small').textContent.trim() + ' ' : '') + scene.caption,
-                points: catalogue ? Array.from(card.querySelectorAll('.d-flex > span')).map(function (s) { return s.textContent.trim(); }) : scene.nodes });
+                points: points });
         });
         if (items.length < 2) return;
         var prefix = 'service-showcase-' + group;
         var root = el('div', 'service-showcase');
         root.setAttribute('role', 'region');
-        root.setAttribute('aria-label', catalogue ? '服务目录展示' : products ? '产品和服务展示' : '主营业务展示');
+        root.setAttribute('aria-label', services ? '技术与服务展示' : catalogue ? '服务目录展示' : products ? '产品和服务展示' : '主营业务展示');
         var tabs = el('div', 'showcase-tabs'); tabs.setAttribute('role', 'tablist');
-        tabs.setAttribute('aria-label', catalogue ? '选择服务目录' : products ? '选择产品和服务' : '选择主营业务');
+        tabs.setAttribute('aria-label', services ? '选择技术与服务' : catalogue ? '选择服务目录' : products ? '选择产品和服务' : '选择主营业务');
         tabs.style.setProperty('--showcase-count', items.length);
         var stage = el('div', 'showcase-stage');
         var buttons = [], panels = [];

@@ -59,6 +59,7 @@
     .homepage #header-carousel .carousel-caption :is(h1,h2) { font-size: clamp(30px,5.5vw,40px); }
     .homepage .expertise-strip > .container { padding-block: 32px; }
     .homepage .expertise-strip ul { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    .homepage .expertise-strip ul > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
     .technology-card { padding: 18px; }
     .homepage .architecture { padding: 20px 0 0; border-top: 1px solid #dce3ea; }
     .homepage .architecture-services { grid-template-columns: minmax(0,1fr); gap: 12px; padding-top: 0; }
@@ -68,4 +69,11 @@
     .homepage .architecture-services small { margin-top: 2px; }
     .homepage .architecture-base { grid-template-columns: 1fr; gap: 8px; font-size: 14px; }
     .homepage .architecture-base span + span { padding-top: 8px; border-top: 1px solid var(--brand-cyan-border); }
+}
+
+/* Keep the connector visible on both regular and active milestone cards. */
+.homepage .milestone-carousel .milestone-marker::after,
+.homepage .milestone-carousel .owl-item.center .milestone-marker::after {
+    height: 2px;
+    background: #9aaabd;
 }

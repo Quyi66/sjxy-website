@@ -1,4 +1,4 @@
-/* Two independent, progressively enhanced service showcases. */
+/* Progressively enhanced service collections; source cards remain usable without JS. */
 [data-service-showcase] .showcase-source[hidden],
 [data-service-showcase] .technology-list[hidden],
 .service-showcase .showcase-panel[hidden] { display: none !important; }

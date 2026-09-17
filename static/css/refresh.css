@@ -250,12 +250,6 @@ body>.container-fluid.text-white:last-of-type p{font-size:12px;color:#aab9cc}
 .presentation-reveal{transition:opacity 320ms ease,transform 320ms ease}
 .presentation-reveal.is-pending{opacity:0;transform:translateY(8px)}
 .presentation-reveal.is-visible{opacity:1;transform:none}
-@media(min-width:992px) and (max-width:1439.98px){
- .navbar-expand-lg{flex-wrap:wrap;justify-content:space-between}
- .navbar-expand-lg .navbar-collapse{flex-basis:100%;justify-content:center}
- .navbar-dark .navbar-nav{margin-left:0!important;width:100%;justify-content:space-between;gap:10px}
- .navbar-dark{padding-top:14px!important;padding-bottom:10px!important;gap:8px}
-}
 @media(max-width:991.98px){
  .navbar-dark{padding:16px 24px!important}.navbar-dark .navbar-brand .brand-title{font-size:20px}
  .navbar-collapse{width:100%}.navbar-dark .navbar-nav{align-items:stretch;gap:2px;padding-top:12px!important}
