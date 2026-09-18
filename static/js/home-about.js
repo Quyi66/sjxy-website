@@ -6,7 +6,7 @@
     if (motion.matches || !('IntersectionObserver' in window)) return;
 
     var targets = document.querySelectorAll(
-        '.homepage .home-service-path li, .homepage .home-value-card, .homepage .home-goal-card'
+        '.homepage .hero-system, .homepage .home-service-path li, .homepage .home-value-card, .homepage .home-goal-card'
     );
     if (!targets.length) return;
 

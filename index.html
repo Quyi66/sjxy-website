@@ -21,6 +21,7 @@
 <link href="static/css/home-refinements.css?v=20260917-tech-timeline" rel="stylesheet">
 <link href="static/css/readability.css?v=20260917-ui-3" rel="stylesheet">
 <link href="static/css/home-about.css?v=20260917-motion-1" rel="stylesheet">
+<link href="static/css/home-hero.css?v=20260917-1" rel="stylesheet">
 </head>
 
 <body class="homepage">
@@ -93,25 +94,27 @@ nav-link dropdown-toggle
 </div></div>
 </nav>
 
-<div id="header-carousel" class="carousel hero-text-carousel">
+<div id="header-carousel" class="home-hero">
 <div class="container hero-layout">
 <div class="carousel-caption"><div class="p-3">
-<div class="hero-messages">
-<div class="hero-message is-current" aria-hidden="false"><h1>开源技术与云计算，<br>一站式专家服务</h1></div>
-<div class="hero-message" aria-hidden="true"><h2>专注核心技术，<br>连接企业与开源未来</h2></div>
-</div>
-<p class="hero-description">从 Linux 到云原生，从技术咨询到持续运维。<br>世纪祥云，为企业提供一站式开源与云计算专家服务。</p>
-<div class="hero-actions"><a href="contact.html" class="btn btn-primary">与我们聊聊 <span aria-hidden="true">↗</span></a><a href="product.html" class="btn btn-outline-primary">探索产品与服务 <span aria-hidden="true">→</span></a></div>
+<p class="hero-eyebrow">世纪祥云 · 企业开源技术伙伴</p>
+<h1>开源技术与云计算，<br>一站式专家服务</h1>
+<p class="hero-description">面向金融行业与企业客户，提供开源平台建设、技术咨询与持续运维支持，让技术融入业务，让团队掌握能力。</p>
+<div class="hero-actions"><a href="contact.html" class="btn btn-primary">咨询技术方案 <span aria-hidden="true">↗</span></a><a href="product.html" class="btn btn-outline-primary">探索产品与服务 <span aria-hidden="true">→</span></a></div>
 
 </div></div>
-<div class="architecture" role="img" aria-label="开源技术服务架构：以 Linux 为基础，连接 Kubernetes 容器云、OpenStack 私有云和 Ceph 分布式存储，提供咨询、交付与持续支持。">
-<div class="architecture-head"><span>OS-SUPPORT / 技术服务架构</span><span>OPEN & CONNECTED</span></div>
-<div class="architecture-core"><div class="architecture-symbol"><i class="fa fa-layer-group" aria-hidden="true"></i></div><strong>开源，让技术相连</strong><small>ONE PLATFORM. MORE POSSIBILITIES.</small></div>
-<div class="architecture-connector"></div>
-<div class="architecture-services"><div><i class="fa fa-cubes" aria-hidden="true"></i><strong>Kubernetes</strong><small>容器与云原生</small></div><div><i class="fa fa-cloud" aria-hidden="true"></i><strong>OpenStack</strong><small>开源云平台</small></div><div><i class="fa fa-database" aria-hidden="true"></i><strong>Ceph</strong><small>分布式存储</small></div></div>
-<div class="architecture-base"><span>LINUX 基础架构</span><span>ANSIBLE 自动化</span><span>DEVOPS 协作</span></div>
-<div class="architecture-note"><i class="fa fa-code-branch" aria-hidden="true"></i>技术咨询 → 方案交付 → 持续支持</div>
+<section class="hero-system" aria-labelledby="hero-system-title">
+<div class="hero-system-heading"><span class="hero-system-mark" aria-hidden="true"><i class="fa fa-project-diagram"></i></span><div><h2 id="hero-system-title">让开源能力，支撑业务运行</h2><p>从基础平台到持续服务，协同交付</p></div></div>
+<div class="hero-system-layer hero-system-foundation"><span class="hero-layer-label">基础平台</span><div class="hero-foundation-items"><span>计算</span><span>网络</span><span>存储</span></div></div>
+<div class="hero-system-route" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="hero-system-capabilities">
+<div><i class="fa fa-cubes" aria-hidden="true"></i><strong>云原生</strong><small>应用部署与编排</small></div>
+<div><i class="fa fa-cloud" aria-hidden="true"></i><strong>云平台</strong><small>资源整合与管理</small></div>
+<div><i class="fa fa-cogs" aria-hidden="true"></i><strong>自动化</strong><small>运维协同与提效</small></div>
 </div>
+<div class="hero-system-route" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="hero-system-layer hero-system-delivery"><span class="hero-layer-label">服务交付</span><ol><li>技术咨询</li><li>方案实施</li><li>持续支持</li></ol></div>
+</section>
 </div>
 </div>
 </div>
@@ -503,6 +506,6 @@ nav-link dropdown-toggle
 <script src="static/js/contact-copy.js?v=20260916-ui-1"></script>
 <script src="static/js/service-scenes.js?v=20260916-3"></script>
 <script src="static/js/service-showcase.js?v=20260916-review-2"></script>
-<script src="static/js/home-about.js?v=20260917-motion-1"></script>
+<script src="static/js/home-about.js?v=20260917-motion-2"></script>
 </body>
 </html>

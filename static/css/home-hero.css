@@ -1,0 +1,73 @@
+/* A compact first screen; technology names remain in the service links below. */
+.homepage .home-hero .hero-layout {
+    max-width: 1280px;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(32px, 4vw, 64px);
+    padding-block: 48px;
+}
+.homepage .home-hero .hero-layout > * { min-width: 0; }
+.homepage #header-carousel.home-hero .carousel-caption h1 { font-size: clamp(34px, 3.1vw, 46px); line-height: 1.4; }
+.homepage .home-hero .hero-description { max-width: 30em; margin: 22px 0 28px; font-size: 17px; line-height: 1.9; }
+.homepage .home-hero .hero-actions .btn { display: inline-flex; align-items: center; justify-content: center; }
+.hero-system { padding: 28px; border: 1px solid #dce8ee; border-radius: 14px; background: linear-gradient(145deg, #f1fafc, #f8fafb 70%); }
+.hero-system-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+.hero-system-mark { display: grid; place-items: center; flex: 0 0 42px; height: 42px; color: var(--brand-cyan-ink); background: #fff; border: 1px solid var(--brand-cyan-border); border-radius: 10px; font-size: 20px; }
+.hero-system-heading h2 { font-size: 21px; margin: 0 0 4px; line-height: 1.5; }
+.hero-system-heading p { font-size: 14px; color: #536174; margin: 0; }
+.hero-system-layer { padding: 16px 18px; border: 1px solid #dce8ee; border-radius: 8px; background: #fff; }
+.hero-layer-label { display: block; font-size: 12px; font-weight: 600; color: #536174; margin-bottom: 8px; letter-spacing: .06em; }
+.hero-foundation-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center; font-size: 16px; color: var(--dark); font-weight: 600; }
+.hero-foundation-items span + span { border-left: 1px solid #e0e9ed; }
+.hero-system-route { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); height: 22px; }
+.hero-system-route span { position: relative; justify-self: center; width: 1px; background: #9dcbd9; }
+.hero-system-route span::after { content: ''; position: absolute; bottom: 2px; left: -3px; width: 7px; height: 7px; border-right: 1px solid #5aaac1; border-bottom: 1px solid #5aaac1; transform: rotate(45deg); }
+.hero-system-capabilities { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.hero-system-capabilities > div { padding: 16px 6px; text-align: center; border: 1px solid #dce8ee; border-radius: 8px; background: #fff; }
+.hero-system-capabilities i { display: block; font-size: 23px; color: var(--brand-cyan); margin-bottom: 10px; }
+.hero-system-capabilities strong { display: block; font-size: 17px; font-weight: 600; color: var(--dark); }
+.hero-system-capabilities small { display: block; font-size: 12px; margin-top: 4px; color: #536174; }
+.hero-system-delivery { border-color: var(--brand-cyan-border); background: #eaf8fc; }
+.hero-system-delivery ol { display: flex; justify-content: space-between; gap: 8px; list-style: none; margin: 0; padding: 0; color: var(--brand-cyan-ink); font-size: 15px; font-weight: 600; }
+.hero-system-delivery li + li::before { content: '→'; margin-right: 10px; color: #64a8bb; }
+@keyframes hero-node-enter {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-route-enter {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+}
+@media (prefers-reduced-motion: no-preference) {
+    /* Animate the diagram's parts instead of moving the entire panel. */
+    .homepage .hero-system.home-motion-entered { animation: none; }
+    .hero-system.home-motion-entered .hero-system-foundation { animation: hero-node-enter 400ms ease-out both; }
+    .hero-system.home-motion-entered .hero-system-route span { transform-origin: top; animation: hero-route-enter 400ms 100ms ease-out both; }
+    .hero-system.home-motion-entered .hero-system-capabilities > div { animation: hero-node-enter 400ms 180ms ease-out both; }
+    .hero-system.home-motion-entered .hero-system-capabilities > div:nth-child(2) { animation-delay: 260ms; }
+    .hero-system.home-motion-entered .hero-system-capabilities > div:nth-child(3) { animation-delay: 340ms; }
+    .hero-system.home-motion-entered .hero-system-capabilities + .hero-system-route span { animation-delay: 400ms; }
+    .hero-system.home-motion-entered .hero-system-delivery { animation: hero-node-enter 400ms 480ms ease-out both; }
+}
+@media (max-width: 991.98px) {
+    .homepage .home-hero .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 36px; }
+    .homepage .home-hero .hero-description { max-width: 38em; }
+    .hero-system { width: 100%; max-width: 620px; }
+}
+@media (max-width: 575.98px) {
+    .homepage #header-carousel.home-hero .carousel-caption h1 { font-size: clamp(25px, 6.5vw, 34px); }
+    .homepage .home-hero .hero-description { font-size: 16px; }
+    .hero-system { padding: 20px 14px; }
+    .hero-system-heading { gap: 10px; }
+    .hero-system-heading h2 { font-size: 18px; }
+    .hero-system-heading p { font-size: 12px; }
+    .hero-system-mark { flex-basis: 34px; height: 34px; font-size: 17px; }
+    .hero-system-capabilities { gap: 6px; }
+    .hero-system-capabilities strong { font-size: 16px; }
+    .hero-system-capabilities small { font-size: 11px; }
+    .hero-system-layer { padding: 14px 10px; }
+    .hero-system-delivery ol { gap: 4px; font-size: 13px; }
+    .hero-system-delivery li + li::before { margin-right: 4px; }
+}
+@media print {
+    .homepage .hero-system.home-motion-entered * { animation: none; }
+}
