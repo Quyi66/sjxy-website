@@ -6,7 +6,7 @@
     if (motion.matches || !('IntersectionObserver' in window)) return;
 
     var targets = document.querySelectorAll(
-        '.homepage .hero-system, .homepage .home-service-path li, .homepage .home-value-card, .homepage .home-goal-card'
+        '.homepage [data-home-reveal], .homepage .hero-system, .homepage .home-service-path li, .homepage .home-value-card, .homepage .home-goal-card'
     );
     if (!targets.length) return;
 
@@ -16,9 +16,22 @@
             entry.target.classList.add('home-motion-entered');
             observer.unobserve(entry.target);
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0, rootMargin: '0px 0px 32px 0px' });
 
-    targets.forEach(function (target) { observer.observe(target); });
+    targets.forEach(function (target) {
+        // Content already on screen stays readable immediately; retain the hero diagram sequence.
+        if (!target.classList.contains('hero-system') && target.getBoundingClientRect().top < window.innerHeight) return;
+        observer.observe(target);
+    });
+
+    // Keyboard navigation should never land on an element fading in.
+    document.addEventListener('focusin', function (event) {
+        targets.forEach(function (target) {
+            if (!target.contains(event.target)) return;
+            observer.unobserve(target);
+            target.classList.remove('home-motion-entered');
+        });
+    });
 
     // A preference change also stops animations already in progress.
     function stopMotion(event) {
@@ -28,4 +41,5 @@
     }
     if (motion.addEventListener) motion.addEventListener('change', stopMotion);
     else if (motion.addListener) motion.addListener(stopMotion);
+    window.addEventListener('beforeprint', function () { stopMotion({ matches: true }); });
 }());

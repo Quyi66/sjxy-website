@@ -260,7 +260,7 @@
                 observer.unobserve(entry.target);
             });
         }, { threshold: 0, rootMargin: '0px 0px 32px 0px' });
-        document.querySelectorAll('body > .container-fluid.wow').forEach(function (element) {
+        document.querySelectorAll('body:not(.homepage) > .container-fluid.wow').forEach(function (element) {
             if (element.getBoundingClientRect().top < window.innerHeight || element.classList.contains('bg-dark')) return;
             element.classList.add('presentation-reveal', 'is-pending');
             pending.push(element);

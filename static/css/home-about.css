@@ -79,11 +79,11 @@
     }
     .homepage .home-service-path li:nth-child(2),
     .homepage .home-value-card:nth-child(2),
-    .homepage .home-goal-card:nth-child(2) { --home-entry-delay: 100ms; }
+    .homepage .home-goal-card:nth-child(2) { --home-entry-delay: 60ms; }
     .homepage .home-service-path li:nth-child(3),
     .homepage .home-value-card:nth-child(3),
-    .homepage .home-goal-card:nth-child(3) { --home-entry-delay: 200ms; }
-    .homepage .home-goal-card:nth-child(4) { --home-entry-delay: 300ms; }
+    .homepage .home-goal-card:nth-child(3) { --home-entry-delay: 120ms; }
+    .homepage .home-goal-card:nth-child(4) { --home-entry-delay: 180ms; }
     .homepage .home-service-path li.home-motion-entered:not(:last-child)::before {
         transform-origin: top;
         animation: home-path-connect 400ms ease-out both;
