@@ -1,0 +1,21 @@
+/* Let the diagram's own sections carry the hierarchy without a second frame. */
+.case-figure.case-figure--diagram {
+    padding: 0;
+    background: #fff;
+    border: 1px solid var(--site-border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.case-figure--diagram > a { display: block; }
+.case-figure--diagram > a:focus-visible { outline: 2px solid var(--brand-cyan-ink); outline-offset: -3px; }
+.case-figure--diagram img { display: block; width: 100%; height: auto; }
+.case-figure--diagram figcaption {
+    margin: 0;
+    padding: 14px 20px;
+    border-top: 1px solid var(--site-border);
+    background: var(--light);
+    line-height: 1.7;
+}
+@media (max-width: 575.98px) {
+    .case-figure--diagram figcaption { padding: 12px 16px; font-size: 14px; }
+}

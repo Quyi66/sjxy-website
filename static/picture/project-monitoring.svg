@@ -1,36 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="880" viewBox="0 0 960 880" role="img" aria-labelledby="title desc">
-  <title id="title">基础架构监控方案</title>
-  <desc id="desc">底层应用、容器、数据库及系统经 Prometheus 集群采集数据，结合数据管理、分析和通讯服务，在 Grafana 中展示。</desc>
-  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#087f9b" stroke-width="1.5"/></marker></defs>
-  <style>text{font-family:'Microsoft YaHei','PingFang SC',Arial,sans-serif;fill:#17243c;font-size:22px}.title{font-size:32px;font-weight:700}.label{font-size:25px;font-weight:700}.meta{font-size:18px;fill:#087f9b;font-weight:700;letter-spacing:1px}.body{fill:#435168}.panel{fill:#f5f8fa;stroke:#dce5eb}.accent{fill:#eaf7fb;stroke:#b9dfe9}.card{fill:#fff;stroke:#dce5eb}.arrow{fill:none;stroke:#087f9b;stroke-width:2;marker-end:url(#arrow)}</style>
-  <rect width="960" height="880" rx="16" fill="#fff"/>
-  <text x="40" y="46" class="meta">CASE STUDY / MONITORING</text>
-  <text x="40" y="94" class="title">基础架构监控方案</text>
-  <rect x="40" y="124" width="880" height="148" rx="12" class="accent"/>
-  <text x="64" y="159" class="meta">03 / 可视化展示</text>
-  <text x="64" y="204" class="label">Grafana</text>
-  <text x="64" y="246" class="body">自定义仪表盘 · 多维指标 · 数据查询 · 历史数据</text>
-  <path d="M480 322V282" class="arrow"/>
-  <rect x="40" y="332" width="880" height="226" rx="12" class="panel"/>
-  <text x="64" y="368" class="meta">02 / 数据管理与分析</text>
-  <rect x="64" y="388" width="252" height="144" rx="10" class="card"/>
-  <text x="86" y="428" class="label">数据管理</text>
-  <text x="86" y="472" class="body">用户管理 · 资源定义</text>
-  <text x="86" y="507" class="body">监控设备 · 存储设备</text>
-  <rect x="334" y="388" width="268" height="144" rx="10" class="card"/>
-  <text x="356" y="428" class="label">数据分析</text>
-  <text x="356" y="472" class="body">监控设备 · 调试配置</text>
-  <text x="356" y="507" class="body">数据汇总</text>
-  <rect x="620" y="388" width="276" height="144" rx="10" class="card"/>
-  <text x="642" y="428" class="label">通讯服务</text>
-  <text x="642" y="472" class="body">邮件告警 · 事件平台</text>
-  <text x="642" y="507" class="body">AMQP</text>
-  <path d="M480 610V568" class="arrow"/>
-  <rect x="40" y="620" width="880" height="86" rx="12" class="accent"/>
-  <text x="64" y="656" class="label">Prometheus 集群</text>
-  <text x="64" y="689" class="body">采集并汇聚运行指标</text>
-  <path d="M480 758V716" class="arrow"/>
-  <rect x="40" y="768" width="880" height="88" rx="12" class="panel"/>
-  <text x="64" y="801" class="meta">01 / 监控对象</text>
-  <text x="64" y="836" class="body">Applications / Container / Database / VMware / Linux / Windows</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="724" viewBox="0 0 960 724" role="img" aria-labelledby="title desc">
+<title id="title">基础架构监控方案</title><desc id="desc">数据自下而上流动：监控对象、Prometheus 指标采集、数据管理与分析、Grafana 可视化展示。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#087f9b" stroke-width="1.5"/></marker></defs>
+<style>text{font-family:'Microsoft YaHei','PingFang SC',Arial,sans-serif;font-size:18px;fill:#435168}.title{font-size:26px;font-weight:600;fill:#17243c}.label{font-size:21px;font-weight:600;fill:#17243c}.meta{font-size:14px;fill:#536174;letter-spacing:1px}.layer{font-size:18px;font-weight:600;fill:#087f9b}.panel{fill:#f5f8fa;stroke:#dce5eb}.accent{fill:#eaf7fb;stroke:#b9dfe9}.tag{fill:#fff;stroke:#dce5eb}.arrow{fill:none;stroke:#087f9b;stroke-width:2;marker-end:url(#arrow)}.divider{stroke:#dce5eb;stroke-width:1}</style>
+<rect width="960" height="724" fill="#fff"/>
+<text x="32" y="34" class="meta">CASE STUDY / MONITORING</text>
+<text x="32" y="76" class="title">基础架构监控方案</text>
+<rect x="32" y="100" width="896" height="112" rx="10" class="accent"/>
+<text x="56" y="134" class="layer">04 / 可视化展示</text>
+<text x="56" y="174" class="label">Grafana</text>
+<text x="200" y="174">自定义仪表盘 · 多维指标 · 数据查询 · 历史数据</text>
+<path d="M480 244V220" class="arrow"/>
+<rect x="32" y="252" width="896" height="180" rx="10" class="panel"/>
+<text x="56" y="286" class="layer">03 / 数据管理与分析</text>
+<path d="M326 310V410M628 310V410" class="divider"/>
+<text x="56" y="328" class="label">数据管理</text><text x="56" y="365">用户管理 · 资源定义</text><text x="56" y="398">监控设备 · 存储设备</text>
+<text x="350" y="328" class="label">数据分析</text><text x="350" y="365">监控设备 · 调试配置</text><text x="350" y="398">数据汇总</text>
+<text x="654" y="328" class="label">通讯服务</text><text x="654" y="365">邮件告警 · 事件平台</text><text x="654" y="398">AMQP</text>
+<path d="M480 464V440" class="arrow"/>
+<rect x="32" y="472" width="896" height="104" rx="10" class="accent"/>
+<text x="56" y="505" class="layer">02 / 指标采集</text>
+<text x="56" y="549" class="label">Prometheus 集群</text><text x="330" y="549">采集并汇聚运行指标</text>
+<path d="M480 608V584" class="arrow"/>
+<text x="56" y="644" class="layer">01 / 监控对象</text>
+<g text-anchor="middle">
+<rect x="32" y="660" width="136" height="40" rx="6" class="panel"/><text x="100" y="687">应用</text>
+<rect x="184" y="660" width="136" height="40" rx="6" class="panel"/><text x="252" y="687">容器</text>
+<rect x="336" y="660" width="136" height="40" rx="6" class="panel"/><text x="404" y="687">数据库</text>
+<rect x="488" y="660" width="136" height="40" rx="6" class="panel"/><text x="556" y="687">VMware</text>
+<rect x="640" y="660" width="136" height="40" rx="6" class="panel"/><text x="708" y="687">Linux</text>
+<rect x="792" y="660" width="136" height="40" rx="6" class="panel"/><text x="860" y="687">Windows</text>
+</g>
 </svg>

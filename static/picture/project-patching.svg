@@ -1,35 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="760" viewBox="0 0 960 760" role="img" aria-labelledby="title desc">
-  <title id="title">Linux 补丁统一管理方案</title>
-  <desc id="desc">第三方软件源和红帽官方订阅同步软件包，通过补丁管理平台及 Ansible 自动纳管 RHEL、SuSE 和 CentOS 服务器。</desc>
-  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#087f9b" stroke-width="1.5"/></marker></defs>
-  <style>text{font-family:'Microsoft YaHei','PingFang SC',Arial,sans-serif;fill:#17243c;font-size:22px}.title{font-size:32px;font-weight:700}.label{font-size:25px;font-weight:700}.meta{font-size:18px;fill:#087f9b;font-weight:700;letter-spacing:1px}.body{fill:#435168}.card{fill:#f5f8fa;stroke:#dce5eb}.arrow{fill:none;stroke:#087f9b;stroke-width:2;marker-end:url(#arrow)}</style>
-  <rect width="960" height="760" rx="16" fill="#fff"/>
-  <text x="40" y="46" class="meta">CASE STUDY / PATCH MANAGEMENT</text>
-  <text x="40" y="94" class="title">Linux 补丁统一管理方案</text>
-  <text x="40" y="134" class="body">软件包同步 → 补丁管理 → 多厂商系统纳管</text>
-  <rect x="40" y="174" width="424" height="110" rx="12" class="card"/>
-  <rect x="496" y="174" width="424" height="110" rx="12" class="card"/>
-  <g text-anchor="middle">
-    <text x="252" y="217" class="label">第三方软件源</text>
-    <text x="252" y="255" class="body">同步所需软件包</text>
-    <text x="708" y="217" class="label">红帽官方订阅</text>
-    <text x="708" y="255" class="body">使用订阅账号同步软件包</text>
-  </g>
-  <path d="M252 284V320H480V352" class="arrow"/>
-  <path d="M708 284V320H480" fill="none" stroke="#087f9b" stroke-width="2"/>
-  <rect x="180" y="362" width="600" height="132" rx="12" fill="#eaf7fb" stroke="#b9dfe9"/>
-  <text x="480" y="411" text-anchor="middle" class="title">补丁管理平台</text>
-  <text x="480" y="458" text-anchor="middle" class="body">软件包同步 / Ansible 自动纳管</text>
-  <path d="M480 494V538H180V584" class="arrow"/>
-  <path d="M480 538V584" class="arrow"/>
-  <path d="M480 538H780V584" class="arrow"/>
-  <rect x="40" y="594" width="280" height="106" rx="12" class="card"/>
-  <rect x="340" y="594" width="280" height="106" rx="12" class="card"/>
-  <rect x="640" y="594" width="280" height="106" rx="12" class="card"/>
-  <g text-anchor="middle">
-    <text x="180" y="635" class="label">RHEL 6</text><text x="180" y="674" class="body">Linux 服务器</text>
-    <text x="480" y="635" class="label">SuSE</text><text x="480" y="674" class="body">Linux 服务器</text>
-    <text x="780" y="635" class="label">CentOS</text><text x="780" y="674" class="body">Linux 服务器</text>
-  </g>
-  <text x="40" y="741" class="body">统一管理多厂商环境中的系统补丁</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+<title id="title">Linux 补丁统一管理方案</title><desc id="desc">第三方源与红帽官方订阅汇聚软件包，通过补丁管理平台及 Ansible 自动纳管多厂商 Linux 服务器。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#087f9b" stroke-width="1.5"/></marker></defs>
+<style>text{font-family:'Microsoft YaHei','PingFang SC',Arial,sans-serif;font-size:18px;fill:#435168}.title{font-size:26px;font-weight:600;fill:#17243c}.label{font-size:21px;font-weight:600;fill:#17243c}.meta{font-size:14px;fill:#536174;letter-spacing:1px}.layer{font-size:18px;font-weight:600;fill:#087f9b}.panel{fill:#f5f8fa;stroke:#dce5eb}.accent{fill:#eaf7fb;stroke:#b9dfe9}.tag{fill:#fff;stroke:#dce5eb}.arrow{fill:none;stroke:#087f9b;stroke-width:2;marker-end:url(#arrow)}.divider{stroke:#dce5eb;stroke-width:1}</style>
+<rect width="960" height="640" fill="#fff"/>
+<text x="32" y="34" class="meta">CASE STUDY / PATCH MANAGEMENT</text>
+<text x="32" y="76" class="title">Linux 补丁统一管理方案</text>
+<text x="32" y="114">软件包同步 → 补丁管理 → 多厂商系统纳管</text>
+<rect x="32" y="144" width="432" height="104" rx="10" class="panel"/>
+<rect x="496" y="144" width="432" height="104" rx="10" class="panel"/>
+<g text-anchor="middle"><text x="248" y="185" class="label">第三方软件源</text><text x="248" y="221">同步所需软件包</text><text x="712" y="185" class="label">红帽官方订阅</text><text x="712" y="221">使用订阅账号同步软件包</text></g>
+<path d="M248 248V274H480V300" class="arrow"/><path d="M712 248V274H480" fill="none" stroke="#087f9b" stroke-width="2"/>
+<rect x="176" y="310" width="608" height="120" rx="10" class="accent"/>
+<text x="480" y="359" text-anchor="middle" class="title">补丁管理平台</text><text x="480" y="401" text-anchor="middle">软件包同步 / Ansible 自动纳管</text>
+<path d="M480 430V464H176V502" class="arrow"/><path d="M480 464V502" class="arrow"/><path d="M480 464H784V502" class="arrow"/>
+<rect x="32" y="512" width="288" height="104" rx="10" class="panel"/><rect x="336" y="512" width="288" height="104" rx="10" class="panel"/><rect x="640" y="512" width="288" height="104" rx="10" class="panel"/>
+<g text-anchor="middle"><text x="176" y="554" class="label">RHEL 6</text><text x="176" y="590">Linux 服务器</text><text x="480" y="554" class="label">SUSE</text><text x="480" y="590">Linux 服务器</text><text x="784" y="554" class="label">CentOS</text><text x="784" y="590">Linux 服务器</text></g>
 </svg>

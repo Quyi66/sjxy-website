@@ -1,30 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="800" viewBox="0 0 960 800" role="img" aria-labelledby="title desc">
-  <title id="title">CentOS 系统定制方案</title>
-  <desc id="desc">基于案例中的 CentOS 7 与 Xfce 桌面集成需求，展示安全管控、开源二次开发、远程运维和技术专家支持的服务范围。</desc>
-  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#087f9b" stroke-width="1.5"/></marker></defs>
-  <style>text{font-family:'Microsoft YaHei','PingFang SC',Arial,sans-serif;fill:#17243c;font-size:22px}.title{font-size:32px;font-weight:700}.label{font-size:25px;font-weight:700}.meta{font-size:18px;fill:#087f9b;font-weight:700;letter-spacing:1px}.body{fill:#435168}.panel{fill:#f5f8fa;stroke:#dce5eb}.card{fill:#fff;stroke:#dce5eb}.arrow{fill:none;stroke:#087f9b;stroke-width:2;marker-end:url(#arrow)}</style>
-  <rect width="960" height="800" rx="16" fill="#fff"/>
-  <text x="40" y="46" class="meta">CASE STUDY / SYSTEM CUSTOMIZATION</text>
-  <text x="40" y="94" class="title">CentOS 系统定制方案</text>
-  <text x="40" y="134" class="body">桌面环境集成 · 安全管控 · 持续技术支持</text>
-  <rect x="40" y="166" width="880" height="142" rx="12" fill="#eaf7fb" stroke="#b9dfe9"/>
-  <text x="64" y="207" class="meta">01 / 定制运行环境</text>
-  <text x="64" y="250" class="title">CentOS 7 + Xfce 桌面</text>
-  <text x="64" y="286" class="body">集成轻量桌面环境，适配客户开发场景</text>
-  <path d="M480 308V348" class="arrow"/>
-  <rect x="40" y="358" width="880" height="126" rx="12" class="panel"/>
-  <text x="64" y="400" class="label">02 / 安全与管控增强</text>
-  <g class="body"><text x="64" y="451">登录限制</text><text x="284" y="451">资源限制</text><text x="504" y="451">用户数限制</text><text x="724" y="451">登录审计</text></g>
-  <path d="M480 484V524" class="arrow"/>
-  <rect x="40" y="534" width="880" height="220" rx="12" class="panel"/>
-  <text x="64" y="575" class="meta">03 / 服务实施与支持</text>
-  <rect x="64" y="598" width="264" height="132" rx="10" class="card"/>
-  <rect x="348" y="598" width="264" height="132" rx="10" class="card"/>
-  <rect x="632" y="598" width="264" height="132" rx="10" class="card"/>
-  <g text-anchor="middle">
-    <text x="196" y="636" class="label">开源二次开发</text><text x="196" y="674" class="body">整合社区项目</text><text x="196" y="707" class="body">定制方案研讨</text>
-    <text x="480" y="636" class="label">远程运维支持</text><text x="480" y="674" class="body">问题修复与补丁编译</text><text x="480" y="707" class="body">CentOS 运维保障</text>
-    <text x="764" y="636" class="label">技术专家支持</text><text x="764" y="674" class="body">稳定性与压力测试</text><text x="764" y="707" class="body">文档及使用手册</text>
-  </g>
-  <text x="40" y="788" class="body">基于本案例服务范围整理</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+<title id="title">CentOS 系统定制方案</title><desc id="desc">方案由运行环境、安全管控能力和配套服务组成，各分区不是先后执行步骤。配套服务包含开源二次开发、远程运维和技术专家支持。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#087f9b" stroke-width="1.5"/></marker></defs>
+<style>text{font-family:'Microsoft YaHei','PingFang SC',Arial,sans-serif;font-size:18px;fill:#435168}.title{font-size:26px;font-weight:600;fill:#17243c}.label{font-size:21px;font-weight:600;fill:#17243c}.meta{font-size:14px;fill:#536174;letter-spacing:1px}.layer{font-size:18px;font-weight:600;fill:#087f9b}.panel{fill:#f5f8fa;stroke:#dce5eb}.accent{fill:#eaf7fb;stroke:#b9dfe9}.tag{fill:#fff;stroke:#dce5eb}.arrow{fill:none;stroke:#087f9b;stroke-width:2;marker-end:url(#arrow)}.divider{stroke:#dce5eb;stroke-width:1}</style>
+<rect width="960" height="640" fill="#fff"/>
+<text x="32" y="34" class="meta">CASE STUDY / SYSTEM CUSTOMIZATION</text>
+<text x="32" y="76" class="title">CentOS 系统定制方案</text>
+<text x="32" y="114">运行环境、管控能力与配套服务共同组成定制方案</text>
+<rect x="32" y="146" width="896" height="126" rx="10" class="accent"/>
+<text x="56" y="180" class="layer">运行环境</text><text x="56" y="221" class="label">CentOS 7 + Xfce 桌面</text><text x="56" y="253">集成轻量桌面环境，适配客户开发场景</text>
+<rect x="32" y="292" width="896" height="114" rx="10" class="panel"/>
+<text x="56" y="327" class="layer">管控能力</text>
+<text x="56" y="376">登录限制</text><text x="280" y="376">资源限制</text><text x="504" y="376">用户数限制</text><text x="744" y="376">登录审计</text>
+<rect x="32" y="426" width="896" height="190" rx="10" class="panel"/>
+<text x="56" y="461" class="layer">配套服务</text>
+<path d="M326 483V591M628 483V591" class="divider"/>
+<text x="56" y="507" class="label">开源二次开发</text><text x="56" y="548">整合社区项目</text><text x="56" y="582">定制方案研讨</text>
+<text x="350" y="507" class="label">远程运维支持</text><text x="350" y="548">问题修复与补丁编译</text><text x="350" y="582">CentOS 运维保障</text>
+<text x="654" y="507" class="label">技术专家支持</text><text x="654" y="548">稳定性与压力测试</text><text x="654" y="582">文档及使用手册</text>
 </svg>

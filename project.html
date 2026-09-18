@@ -15,6 +15,7 @@
 <link href="static/css/modern.css?v=20260916-review-1" rel="stylesheet">
 <link href="static/css/navigation.css?v=20260918-labels" rel="stylesheet">
 <link href="static/css/readability.css?v=20260918-inner-type" rel="stylesheet">
+<link href="static/css/case-diagrams.css?v=20260918-compact" rel="stylesheet">
 </head>
 
 <body class="inner-page">
@@ -111,32 +112,32 @@ nav-link dropdown-toggle
 <a href="#section-1">客户面临的问题</a>
 </li>
 <li>
-<a href="#section-2">项目范围/解决方案：</a>
+<a href="#section-2">项目范围与解决方案</a>
 </li>
 </ul>
 </nav>
 <section class="content-panel" id="section-1">
 <h2>客户面临的问题</h2>
 <ul class="service-list">
-<li>操作系统权限分散 没有批量操作工具</li>
-<li>各种业务监控 agent 无法统一</li>
-<li>现有 zabbix 监控系统使用 mysql 作为后端时常出现 mysql 数据库性能问题</li>
-<li>现有 zabbix 监控展现方式单一</li>
+<li>操作系统权限分散，缺少批量操作工具</li>
+<li>各类业务监控代理（Agent）难以统一管理</li>
+<li>现有 Zabbix 监控系统使用 MySQL 作为后端，数据库时常出现性能问题</li>
+<li>现有 Zabbix 监控展现方式单一</li>
 </ul>
 </section>
 <section class="content-panel" id="section-2">
-<h2>项目范围/解决方案：</h2>
+<h2>项目范围与解决方案</h2>
 <ul class="service-list">
-<li>通过开源技术构建的基础架构监控</li>
-<li>收集各项底层 os，db 等运行数据主要用于故障问题定位</li>
-<li>通过 Ansible 脚本实现监控虚拟机，数据库等批量接管</li>
+<li>通过开源技术构建基础架构监控体系</li>
+<li>收集底层操作系统、数据库等运行数据，用于故障定位</li>
+<li>通过 Ansible 脚本实现监控虚拟机、数据库等的批量接管</li>
 </ul>
 </section>
-<figure class="case-figure">
-<a href="static/picture/project-monitoring.svg" target="_blank" rel="noopener">
-<img src="static/picture/project-monitoring.svg" alt="监控架构：底层监控对象经 Prometheus 采集、数据管理与分析，在 Grafana 中展示" width="960" height="880" loading="lazy">
+<figure class="case-figure case-figure--diagram">
+<a href="static/picture/project-monitoring.svg?v=20260918-type-small" target="_blank" rel="noopener">
+<img src="static/picture/project-monitoring.svg?v=20260918-type-small" alt="监控架构：底层监控对象经 Prometheus 采集、数据管理与分析，在 Grafana 中展示" width="960" height="724" loading="lazy">
 </a>
-<figcaption>监控架构示意图 · <a href="static/picture/project-monitoring.svg" target="_blank" rel="noopener">查看高清矢量图（新窗口）</a>
+<figcaption>监控架构示意图 · <a href="static/picture/project-monitoring.svg?v=20260918-type-small" target="_blank" rel="noopener">查看高清矢量图（新窗口）</a>
 </figcaption>
 </figure>
 <section class="content-panel">
