@@ -1,0 +1,48 @@
+/* Scoped to the case listing and contact cards; content determines height. */
+.customer-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 32px;
+    align-items: start;
+}
+.customer-cases { min-width: 0; }
+.customer-cases > .row { --bs-gutter-x: 28px; --bs-gutter-y: 28px; }
+.customer-sidebar { display: grid; gap: 16px; min-width: 0; }
+.customer-sidebar .content-panel { margin: 0; padding: 24px; border-radius: 8px; }
+.customer-sidebar .content-panel h2 { margin-bottom: 12px; font-size: 20px; line-height: 1.5; }
+.customer-sidebar .content-panel p { margin-bottom: 16px; font-size: 16px; line-height: 1.75; }
+.customer-sidebar .content-panel > a:not(.btn) { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+.customer-sidebar .consultation-link { background: var(--brand-cyan-soft); border-color: var(--brand-cyan-border); }
+.customer-sidebar .btn { display: flex; justify-content: center; width: 100%; }
+
+.contact-methods { gap: 20px; }
+.contact-methods .contact-method { padding: 24px 24px 18px; border-radius: 10px; }
+.contact-method-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.contact-method-heading .contact-method-icon { flex: 0 0 40px; width: 40px; height: 40px; margin: 0; font-size: 18px; }
+.contact-method-heading h3 { margin: 0; font-size: 20px; line-height: 1.4; }
+.contact-methods .contact-method-value { margin-bottom: 10px; line-height: 1.65; }
+.contact-method--address .contact-method-value { font-size: 16px; font-weight: 400; color: #435168; }
+.contact-methods .contact-method p:not(.contact-method-value):not(.contact-copy-status) { margin-bottom: 20px; line-height: 1.7; }
+.contact-methods .contact-method .contact-copy-status {
+    align-self: stretch;
+    min-height: 1.8em;
+    margin: 8px 0 0;
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+.contact-preparation { margin-top: 24px; padding: 20px 24px; }
+
+@media (min-width: 992px) and (min-height: 760px) {
+    .customer-sidebar { position: sticky; top: 104px; }
+}
+@media (max-width: 991.98px) {
+    .customer-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    .customer-sidebar { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+}
+@media (max-width: 575.98px) {
+    .customer-sidebar { grid-template-columns: minmax(0, 1fr); }
+    .customer-sidebar .content-panel { padding: 20px; }
+    .contact-methods .contact-method { padding: 20px 20px 14px; }
+    .contact-preparation { padding: 20px; }
+}
