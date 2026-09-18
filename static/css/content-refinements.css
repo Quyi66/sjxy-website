@@ -1,0 +1,33 @@
+/* Focused contact, training, and homepage content refinements. */
+.contact-methods { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.contact-method { display: flex; flex-direction: column; align-items: flex-start; padding: 28px; border: 1px solid var(--site-border); border-radius: 12px; background: #fff; min-width: 0; }
+.contact-method-icon { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 18px; background: var(--brand-cyan-soft); color: var(--brand-cyan-ink); border-radius: 10px; font-size: 20px; }
+.contact-method h3 { font-size: 21px; margin-bottom: 12px; }
+.contact-method-value { color: var(--dark); font-size: 18px; font-weight: 600; overflow-wrap: anywhere; margin-bottom: 12px; }
+.contact-method p:not(.contact-method-value):not(.contact-copy-status) { font-size: 15px; color: var(--text-muted); }
+.contact-method .btn { margin-top: auto; }
+.contact-method .contact-copy-status { margin: 12px 0 0; min-height: 3.6em; font-size: 13px; }
+.contact-preparation { margin-top: 28px; padding: 24px 28px; border-radius: 10px; background: var(--light); }
+.contact-preparation h3 { font-size: 20px; }
+.contact-preparation p { margin: 0; font-size: 16px; }
+.training-intro { margin-bottom: 28px; }
+.training-highlights { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.training-highlights > div { padding: 18px; border-radius: 8px; background: var(--brand-cyan-soft); }
+.training-highlights h3 { margin: 0 0 8px !important; font-size: 18px; }
+.training-highlights p { margin: 0; font-size: 15px; }
+.training-steps { padding-left: 24px; margin: 0; }
+.training-steps li { padding: 8px 0 8px 6px; }
+.training-steps li::marker { color: var(--brand-cyan-ink); font-weight: 600; }
+.homepage .home-about-layout.home-about-layout--compact { grid-template-columns: minmax(0, 1fr); max-width: 960px; margin-inline: auto; }
+.homepage .home-about-layout--compact .home-about-description { font-size: 17px; max-width: 48em; }
+.homepage .home-about-layout--compact .home-about-capabilities { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.homepage .home-about-layout--compact .home-about-contact { padding-top: 20px; border-top: 1px solid var(--site-border); }
+.homepage .home-about-more { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-weight: 600; }
+@media (max-width: 991.98px) {
+    .contact-methods { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .contact-method { padding: 24px; }
+}
+@media (max-width: 767.98px) {
+    .training-highlights { grid-template-columns: minmax(0, 1fr); }
+    .homepage .home-about-layout--compact .home-about-capabilities { grid-template-columns: minmax(0, 1fr); }
+}

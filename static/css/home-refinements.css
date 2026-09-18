@@ -77,3 +77,17 @@
     height: 2px;
     background: #9aaabd;
 }
+
+/* Bounded timeline: compact cards and a connector sized by its own card. */
+.homepage .milestone-carousel .owl-stage { padding: 12px 0 20px; }
+.homepage .milestone-carousel .testimonial-item { min-height: 224px; }
+.homepage .milestone-carousel .testimonial-item > .border-bottom { padding: 24px !important; }
+.homepage .milestone-carousel .milestone-year { font-size: clamp(38px, 3.3vw, 44px); }
+.homepage .milestone-carousel h4 { margin-bottom: 40px !important; }
+.homepage .milestone-carousel small { min-height: 0; text-transform: none !important; }
+.homepage .milestone-carousel .milestone-marker { top: 86px; left: 24px; }
+.homepage .milestone-carousel .milestone-marker::after { display: none; }
+.homepage .milestone-carousel .testimonial-item > .border-bottom::before {
+    content: ''; position: absolute; top: 91px; left: 48px; right: 24px;
+    height: 2px; background: #9aaabd;
+}

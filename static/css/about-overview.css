@@ -1,0 +1,55 @@
+/* Company overview: content-led panels instead of repeated decorative artwork. */
+.about-page .about-overview,
+.about-page .about-values { padding-block: 56px !important; }
+.about-page :is(.about-overview, .about-values) > .container { padding-block: 0 !important; }
+.about-page .about-overview > .container > .row { align-items: center; }
+.about-page .about-overview .mb-x { margin-bottom: 20px !important; }
+.about-page .about-contact {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--site-border);
+}
+.about-page .about-hotline { display: grid; gap: 2px; }
+.about-page .about-hotline span { color: var(--text-muted); font-size: 14px; }
+.about-page .about-hotline a { font-size: 21px; font-weight: 600; white-space: nowrap; }
+.about-page .about-capabilities {
+    padding: clamp(24px, 3vw, 40px);
+    border: 1px solid var(--site-border);
+    border-top: 3px solid var(--brand-cyan);
+    border-radius: 12px;
+    background: linear-gradient(145deg, #f0fafd, #f7f8fa 65%);
+}
+.about-page .about-label { margin: 0 0 12px; color: var(--brand-cyan-ink); font-size: 14px; font-weight: 600; }
+.about-page .about-capabilities h2 { margin: 0 0 12px; font-size: clamp(23px, 2vw, 28px); line-height: 1.5; }
+.about-page .about-capabilities-intro { margin-bottom: 24px; color: var(--text-muted); font-size: 15px; }
+.about-page .about-capability-list { list-style: none; margin: 0; padding: 0; }
+.about-page .about-capability-list li { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-top: 1px solid #dce8ed; }
+.about-page .about-capability-list li:last-child { padding-bottom: 0; }
+.about-page .about-capability-list i { flex: 0 0 24px; margin-top: 4px; color: var(--brand-cyan-ink); font-size: 21px; text-align: center; }
+.about-page .about-capability-list h3 { margin: 0 0 4px; font-size: 18px; }
+.about-page .about-capability-list p { margin: 0; font-size: 15px; overflow-wrap: anywhere; }
+.about-page .about-values { background: var(--light); border-top: 1px solid var(--site-border); }
+.about-page .about-values .section-title { max-width: 800px !important; margin-bottom: 32px !important; }
+.about-page .about-values .row { --bs-gutter-x: 24px; --bs-gutter-y: 24px; }
+.about-page .about-value-card { height: 100%; padding: 28px; background: #fff; border: 1px solid var(--site-border); border-radius: 10px; }
+.about-page .about-value-icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 24px; border-radius: 10px; background: var(--brand-cyan-soft); color: var(--brand-cyan-ink); font-size: 22px; }
+.about-page .about-value-card .text-center { padding: 0 !important; text-align: left !important; }
+.about-page .about-value-card h3 { margin-bottom: 12px; font-size: 22px; }
+.about-page .about-value-card p { color: var(--text-muted); font-size: 16px; }
+@media (max-width: 991.98px) {
+    .about-page .about-overview > .container > .row { --bs-gutter-y: 32px; }
+    .about-page .about-value-card { display: flex; align-items: flex-start; gap: 20px; }
+    .about-page .about-value-icon { flex-shrink: 0; margin-bottom: 0; }
+}
+@media (max-width: 575.98px) {
+    .about-page .about-overview,
+    .about-page .about-values { padding-block: 32px !important; }
+    .about-page .about-capabilities { padding: 24px 20px; }
+    .about-page .about-value-card { padding: 24px 20px; gap: 16px; }
+    .about-page .about-contact { gap: 20px; }
+    .about-page .about-values .section-title h2 { font-size: 26px; }
+}

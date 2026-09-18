@@ -29,7 +29,8 @@ p { line-height: 1.85; }
 .page-breadcrumb ol { font-size: 14px; }
 .bg-header .page-subtitle { font-size: 17px; color: #435168; }
 .case-figure figcaption,.certificate-card p,.milestone-carousel small { font-size: 15px; color: #536174; }
-body > .bg-dark.mt-5 p,body > .bg-dark.mt-5 a { font-size: 15px; color: #536174 !important; }
+body > .bg-dark.mt-5 p,body > .bg-dark.mt-5 a,
+body > .bg-dark.mt-5 .link-animated > .static-label { font-size: 15px; color: #536174 !important; }
 
 /* Keep the service artwork and its accompanying copy equally legible. */
 .service-showcase { --showcase-muted: #536174; }

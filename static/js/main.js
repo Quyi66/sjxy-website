@@ -195,7 +195,7 @@
                 window.jQuery('.milestone-carousel .owl-dot').each(function (index) {
                     this.setAttribute('role', 'button');
                     this.setAttribute('tabindex', '0');
-                    this.setAttribute('aria-label', '跳转到第 ' + (index + 1) + ' 项大事记');
+                    this.setAttribute('aria-label', '跳转到第 ' + (index + 1) + ' 页大事记');
                     this.addEventListener('keydown', function (event) {
                         if (event.key === 'Enter' || event.key === ' ') {
                             event.preventDefault(); this.click();
@@ -203,8 +203,9 @@
                     });
                 });
             },
-            loop: true,
-            center: true,
+            loop: false,
+            rewind: false,
+            center: false,
             responsive: {
                 0: { items: 1 },
                 576: { items: 1 },
@@ -223,7 +224,7 @@
                     instance.settings.smartSpeed = reducedMotion.matches ? 0 : 280;
                     instance.options.smartSpeed = instance.settings.smartSpeed;
                 }
-                var play = inView && !hovering && !document.hidden && !reducedMotion.matches && !element.contains(document.activeElement);
+                var play = !element.classList.contains('milestone-carousel') && inView && !hovering && !document.hidden && !reducedMotion.matches && !element.contains(document.activeElement);
                 carousel.trigger(play ? 'play.owl.autoplay' : 'stop.owl.autoplay', play ? [5500] : []);
             }
             element.addEventListener('mouseenter', function () { hovering = true; updatePlayback(); });

@@ -13,10 +13,11 @@
     <link href="static/css/style.css" rel="stylesheet">
 <link href="static/css/refresh.css?v=20260914-button-align" rel="stylesheet">
 <link href="static/css/modern.css?v=20260916-review-1" rel="stylesheet">
-<link href="static/css/navigation.css?v=20260917-full-brand-3" rel="stylesheet">
+<link href="static/css/navigation.css?v=20260918-contact-compact" rel="stylesheet">
 <link href="static/css/readability.css?v=20260917-ui-3" rel="stylesheet">
+<link href="static/css/about-overview.css?v=20260918-1" rel="stylesheet">
 </head>
-<body class="inner-page">
+<body class="inner-page about-page">
 <a class="skip-link" href="#main-content">跳转到主要内容</a>
 
 
@@ -99,7 +100,7 @@ nav-link dropdown-toggle active
 
 
 
-<div id="main-content" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+<main id="main-content" class="about-overview container-fluid py-5">
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-7">
@@ -109,80 +110,73 @@ nav-link dropdown-toggle active
                 <p class="mb-4 mb-x">深圳世纪祥云技术有限公司是一家开源和云计算领域技术方案提供商。公司为华南区主要银行，金融行业大客户提供优质的开源技术咨询和支持服务和云计算相关核心技术，主要包括：Linux 操作系统，虚拟化，容器云，公有云，OpenStack 私有云，分布式存储
                 </p>
                 <p class="mb-4 mb-x">公司拥有提供开源的、端到端技术解决方案，通过自身强大的开源技术能力和全方面的知识体系，为客户提供一站式技术咨询和支持服务，在当前开源技术高速发展，云计算，DevOps 各种新技术层出不穷的年代，我们为您提供可信赖的开源专家服务，为您的企业使用大规模开源技术提供强有力的支撑。</p>
-                <div class="row g-0 mb-3">
-                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                        <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Linux 操作系统</h5>
-                        <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>虚拟化</h5>
+                <div class="about-contact">
+                    <a href="contact.html" class="btn btn-primary py-3 px-4">业务咨询 <i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                    <div class="about-hotline">
+                        <span>咨询热线</span>
+                        <a href="tel:13570891960">135-7089-1960</a>
                     </div>
-                <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                    <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>容器云、公有云、OpenStack 私有云</h5>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>分布式存储</h5>
                 </div>
                 </div>
-                <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
-                    <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                        <i class="fa fa-phone-alt text-white"></i>
-                    </div>
-                    
-                <div class="ps-4">
-                    <h5 class="mb-2">咨询热线</h5>
-                    <h4 class="text-primary mb-0">135-7089-1960</h4>
-                </div>
-                </div>
-                <a href="contact.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">业务咨询</a>
-                </div>
-                <div class="col-lg-5" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="static/image/abstract-platform.svg?v=20260916-brand" style="object-fit: cover;" alt="">
-                    </div>
+                <div class="col-lg-5">
+                    <aside class="about-capabilities" aria-labelledby="about-capabilities-title">
+                        <p class="about-label">技术能力</p>
+                        <h2 id="about-capabilities-title">从基础系统到云平台</h2>
+                        <p class="about-capabilities-intro">端到端技术方案，一站式专家服务</p>
+                        <ul class="about-capability-list">
+                            <li><i class="fa fa-server" aria-hidden="true"></i><div><h3>基础架构</h3><p>Linux 操作系统 · 虚拟化</p></div></li>
+                            <li><i class="fa fa-cloud" aria-hidden="true"></i><div><h3>云平台</h3><p>容器云 · 公有云 · OpenStack 私有云</p></div></li>
+                            <li><i class="fa fa-database" aria-hidden="true"></i><div><h3>数据存储</h3><p>分布式存储</p></div></li>
+                        </ul>
+                    </aside>
                 </div>
             </div>
         </div>
-</div>
+</main>
 
-<div  class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+<section class="about-values container-fluid py-5" aria-labelledby="about-values-title">
     <div class="container py-5">
         <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
             <p class="section-eyebrow text-primary">我们坚持</p>
-            <h2 class="mb-0">诚信铸就品质、创新引领未来</h2>
+            <h2 id="about-values-title" class="mb-0">诚信铸就品质、创新引领未来</h2>
         </div>
         <div class="row g-5">
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="static/image/abstract-platform.svg?v=20260916-brand" alt="">
+                <div class="about-value-card">
+                    <div class="about-value-icon" aria-hidden="true">
+                        <i class="fa fa-code"></i>
                     </div>
                     <div class="text-center py-4">
-                        <h4 class="text-primary">技术专注</h4>
+                        <h3>技术专注</h3>
                         <p class="text-uppercase m-0">专注开源技术和云计算核心技术领域</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="static/image/abstract-network.svg?v=20260916-brand" alt="">
+                <div class="about-value-card">
+                    <div class="about-value-icon" aria-hidden="true">
+                        <i class="fa fa-headset"></i>
                     </div>
                 <div class="text-center py-4">
-                    <h4 class="text-primary">客户优先</h4>
+                    <h3>客户优先</h3>
                     <p class="text-uppercase m-0">客户服务体验优先，一站式专家服务</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-            <div class="team-item bg-light rounded overflow-hidden">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="static/image/abstract-support.svg?v=20260916-brand" alt="">
+            <div class="about-value-card">
+                <div class="about-value-icon" aria-hidden="true">
+                    <i class="fa fa-landmark"></i>
                 </div>
             <div class="text-center py-4">
-                <h4 class="text-primary">行业聚焦</h4>
+                <h3>行业聚焦</h3>
                 <p class="text-uppercase m-0">专注金融行业和大客户服务</p>
             </div>
         </div>
     </div>
     </div>
     </div>
-</div>
+</section>
 
 <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
