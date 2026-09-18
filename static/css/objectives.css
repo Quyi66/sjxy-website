@@ -1,0 +1,61 @@
+/* One shared grid keeps both rows aligned as descriptions wrap. */
+.objectives-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr) minmax(0, 1fr);
+    grid-template-areas: "innovation diagram efficiency" "learning diagram open";
+    gap: 24px;
+    align-items: stretch;
+}
+.objectives-diagram { grid-area: diagram; margin: 0; min-width: 0; align-self: center; }
+.objectives-diagram img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.objective-card--innovation { grid-area: innovation; }
+.objective-card--efficiency { grid-area: efficiency; }
+.objective-card--learning { grid-area: learning; }
+.objective-card--open { grid-area: open; }
+.objectives-heading .page-intro { margin-inline: auto; text-align: center; }
+.objective-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid var(--site-border);
+    border-radius: 10px;
+    background: #fff;
+}
+.objective-card-heading { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.objective-card-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: var(--brand-cyan-soft);
+    color: var(--brand-cyan-ink);
+    font-size: 22px;
+}
+.objective-card h3 { margin: 0; font-size: 22px; line-height: 1.4; }
+.objective-card p { margin: 0 0 20px; color: #435168; font-size: 17px; line-height: 1.75; }
+.objective-card > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 44px;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--site-border);
+    color: var(--brand-cyan-ink);
+    font-size: 16px;
+    font-weight: 600;
+}
+.objective-card > a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.objective-card > a:focus-visible { outline: 2px solid var(--brand-cyan-ink); outline-offset: 4px; }
+@media (max-width: 1199.98px) {
+    .objectives-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "diagram diagram" "innovation efficiency" "learning open"; }
+    .objectives-diagram { width: min(100%, 520px); margin-inline: auto; }
+}
+@media (max-width: 767.98px) {
+    .objectives-layout { grid-template-columns: minmax(0, 1fr); grid-template-areas: "diagram" "innovation" "efficiency" "learning" "open"; gap: 16px; }
+    .objective-card { padding: 24px; }
+    .objective-card p { font-size: 16px; }
+}
