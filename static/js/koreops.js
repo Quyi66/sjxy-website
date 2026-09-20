@@ -146,22 +146,35 @@
 
     // Highlight the section being read without changing focus or the URL.
     var pageNav = document.querySelector('.koreops-page .koreops-page-nav');
-    if (pageNav && 'IntersectionObserver' in window) {
+    if (pageNav) {
         var links = Array.from(pageNav.querySelectorAll('a[href^="#"]'));
         var sections = links.map(function (link) { return document.querySelector(link.getAttribute('href')); });
-        var activeSections = new Set();
-        var sectionObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) activeSections.add(entry.target);
-                else activeSections.delete(entry.target);
+        var navUpdatePending = false;
+        function updatePageNav() {
+            navUpdatePending = false;
+            var current = null;
+            var scrollPadding = parseFloat(window.getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+            sections.forEach(function (section) {
+                if (!section) return;
+                // Native anchors combine the scroll container's padding and target's margin.
+                var offset = scrollPadding + (parseFloat(window.getComputedStyle(section).scrollMarginTop) || 0);
+                if (section.getBoundingClientRect().top <= offset + 1) current = section;
             });
-            var current = sections.find(function (section) { return activeSections.has(section); });
             links.forEach(function (link, index) {
                 if (current && sections[index] === current) link.setAttribute('aria-current', 'location');
                 else link.removeAttribute('aria-current');
             });
-        }, { rootMargin: '-15% 0px -45% 0px', threshold: 0 });
-        sections.forEach(function (section) { if (section) sectionObserver.observe(section); });
+        }
+        function schedulePageNavUpdate() {
+            if (navUpdatePending) return;
+            navUpdatePending = true;
+            window.requestAnimationFrame(updatePageNav);
+        }
+        window.addEventListener('scroll', schedulePageNavUpdate, { passive: true });
+        window.addEventListener('resize', schedulePageNavUpdate);
+        window.addEventListener('load', schedulePageNavUpdate);
+        window.addEventListener('hashchange', schedulePageNavUpdate);
+        updatePageNav();
     }
     function motionChanged() { controllers.forEach(function (update) { update(); }); }
     if (motion.addEventListener) motion.addEventListener('change', motionChanged);
