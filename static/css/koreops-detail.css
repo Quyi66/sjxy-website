@@ -1,9 +1,9 @@
 /* Detail-only art direction. Shared product teasers retain their existing styles. */
-.koreops-page { --ko-ink: #102638; --ko-teal: #007d83; --ko-accent: #087d9e; }
+.koreops-page { --ko-ink: #102638; --ko-teal: #087d9e; --ko-accent: #087d9e; --ko-muted: #496273; --ko-soft: #edf6f9; --ko-section-space: 64px; }
 .koreops-page .koreops-breadcrumb-bar { background: #f3f7fa; border-bottom: 1px solid #dce5eb; padding: 14px 0; }
 .koreops-page .koreops-breadcrumb-bar .page-breadcrumb { margin: 0; }
 .koreops-page .koreops-breadcrumb-bar ol { justify-content: flex-start; }
-.koreops-page .koreops-detail section { padding: 80px 0; scroll-margin-top: 160px; }
+.koreops-page .koreops-detail section { padding: var(--ko-section-space) 0; scroll-margin-top: 160px; }
 .koreops-page .koreops-intro {
     position: relative; overflow: hidden; color: #19384c;
     background: radial-gradient(ellipse at 85% 25%, #d9f0f4 0, transparent 48%), linear-gradient(120deg, #ffffff, #edf8fb);
@@ -12,31 +12,35 @@
 .koreops-page .koreops-intro-layout { position: relative; gap: 56px; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
 .koreops-page .koreops-intro .koreops-eyebrow { color: #087d9e; letter-spacing: .12em; font-size: 13px; }
 .koreops-page .koreops-intro h1 { color: #19384c; font-size: clamp(30px, 3.1vw, 46px); line-height: 1.4; letter-spacing: -.035em; margin: 0 0 20px; }
-.koreops-wordmark { display: block; margin-bottom: 22px; font-size: clamp(52px, 5.8vw, 82px); line-height: 1.05; letter-spacing: -.065em; }
+.koreops-wordmark { display: block; margin-bottom: 16px; font-size: clamp(48px, 5vw, 70px); line-height: 1.05; letter-spacing: -.065em; }
 .koreops-page .koreops-intro h1 em { font-style: normal; color: var(--ko-accent); }
-.koreops-product-name { color: #435b6c; font-size: 15px; }
-.koreops-page .koreops-intro .koreops-lead { color: #526b7b; font-size: 15px; line-height: 1.95; }
+.koreops-product-name { color: #435b6c; font-size: 17px; line-height: 1.7; margin-bottom: 12px; }
+.koreops-page .koreops-intro .koreops-lead { color: #526b7b; font-size: 16px; line-height: 1.8; }
 .koreops-page .koreops-scope { gap: 8px; margin-top: 22px; }
 .koreops-page .koreops-scope span { background: #ffffff99; border-color: #cce1e7; color: #466777; font-size: 12px; font-weight: 500; border-radius: 5px; }
 .koreops-page .koreops-intro .btn-primary { background: var(--ko-accent); border-color: var(--ko-accent); color: #fff; box-shadow: 0 6px 26px #087d9e1c; }
 .koreops-page .koreops-intro .btn-outline-primary { color: #087d9e; border-color: #759899; background: transparent; }
-.koreops-page .koreops-intro .btn:hover { background: #dceff4; color: #075e77; border-color: #dceff4; }
-.koreops-console { min-width: 0; border: 1px solid #cce1e7; border-radius: 18px; background: #ffffffed; box-shadow: 0 35px 75px #2a677515, 0 0 65px #57e0c80b; transform: none; }
+.koreops-page .koreops-detail .btn-primary { background: var(--ko-accent); border-color: var(--ko-accent); color: #fff; }
+.koreops-page .koreops-detail .btn-primary:hover { background: #066580; border-color: #066580; color: #fff; }
+.koreops-page .koreops-detail .btn-outline-primary { color: #076681; border-color: #86afbf; }
+.koreops-page .koreops-detail .btn-outline-primary:hover { background: #e3f1f6; color: #075e77; border-color: #86afbf; }
+.koreops-page .koreops-detail .btn { min-height: 46px; border-radius: 8px; font-size: 15px; }
+.koreops-console { min-width: 0; border: 1px solid #cce1e7; border-radius: 18px; background: #ffffffed; box-shadow: 0 16px 40px #2a677512; transform: none; }
 .koreops-console-bar { display: flex; justify-content: space-between; gap: 12px; padding: 17px 22px; border-bottom: 1px solid #dcebf0; font-size: 12px; color: #506a7c; }
 .koreops-console-bar i { display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--ko-accent); box-shadow: 0 0 12px #087d9e66; }
 .koreops-console-bar small { color: #597386; }
 .koreops-console-body { padding: 26px; }
 .koreops-console-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .koreops-page .koreops-console-heading h2 { color: #19384c; font-size: 23px; margin: 8px 0 0; }
-.koreops-console-badge { color: #087d9e; background: #087d9e0b; border: 1px solid #087d9e30; padding: 7px 9px; border-radius: 5px; font-size: 11px; white-space: nowrap; }
+.koreops-console-badge { color: #087d9e; background: #087d9e0b; border: 1px solid #087d9e30; padding: 7px 9px; border-radius: 5px; font-size: 12px; white-space: nowrap; }
 .koreops-orbit { position: relative; height: 260px; margin: 4px auto; max-width: 400px; }
 .koreops-orbit-ring { position: absolute; width: 206px; height: 206px; left: calc(50% - 103px); top: 27px; border: 1px dashed #90cbd5; border-radius: 50%; box-shadow: 0 0 0 28px #087d9e04, inset 0 0 45px #087d9e0a; }
 .koreops-orbit-ring::before { content: ""; position: absolute; width: 9px; height: 9px; top: 24px; left: 24px; background: #079db5; border-radius: 50%; box-shadow: 0 0 18px #087d9e; }
 .koreops-orbit-core { position: absolute; top: 76px; left: calc(50% - 64px); width: 128px; height: 108px; display: grid; place-content: center; justify-items: center; gap: 4px; text-align: center; border: 1px solid #bddce5; border-radius: 20px; background: #fff; box-shadow: 0 8px 28px #087d9e12; color: #19384c; }
 .koreops-orbit-core img { display: block; width: 88px; height: auto; }
 .koreops-orbit-core strong { font-size: 18px; line-height: 1.2; letter-spacing: -.02em; }
-.koreops-orbit-core small { font-size: 11px; line-height: 1.4; color: #526b7b; }
-.koreops-orbit-node { position: absolute; display: flex; gap: 9px; align-items: center; padding: 10px 14px; border: 1px solid #c4e0e8; background: #ffffff; color: #234f64; border-radius: 9px; font-size: 13px; box-shadow: 0 8px 15px #0002; }
+.koreops-orbit-core small { font-size: 12px; line-height: 1.4; color: #526b7b; }
+.koreops-orbit-node { position: absolute; display: flex; gap: 9px; align-items: center; padding: 10px 14px; border: 1px solid #c4e0e8; background: #ffffff; color: #234f64; border-radius: 9px; font-size: 13px; box-shadow: 0 4px 12px #19384c0a; }
 .koreops-orbit-node i { color: #087d9e; }
 .node-assets { top: 22px; left: 8%; }.node-risk { right: 4%; top: 65px; }.node-patch { bottom: 24px; right: 10%; }.node-audit { left: 3%; bottom: 68px; }
 .koreops-console-pipeline { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; list-style: none; padding: 0; margin: 0; }
@@ -48,7 +52,9 @@
 .koreops-console-footer i { color: #087d9e; margin-right: 5px; }
 .koreops-page .koreops-page-nav { position: sticky; top: var(--site-navbar-height, 84px); z-index: 990; gap: 8px; padding-block: 15px; border: 0; background: #fffffff5; box-shadow: 0 8px 20px #10263806; }
 .koreops-page .koreops-page-nav a { padding: 10px 20px; border-radius: 7px; color: #526577; font-size: 14px; transition: background .2s, color .2s; }
-.koreops-page .koreops-page-nav a:hover, .koreops-page .koreops-page-nav a[aria-current] { background: #e3f3f0; color: #006c69; text-decoration: none; }
+.koreops-page .koreops-page-nav a:hover, .koreops-page .koreops-page-nav a[aria-current] { background: var(--ko-soft); color: #076681; text-decoration: none; }
+.koreops-page .koreops-page-nav a { position: relative; font-weight: 600; }
+.koreops-page .koreops-page-nav a[aria-current]::after { content: ""; position: absolute; bottom: 4px; left: calc(50% - 10px); width: 20px; height: 2px; border-radius: 2px; background: var(--ko-accent); }
 .koreops-page .koreops-section-alt { background: #f3f7f9; }
 .koreops-page .koreops-section-heading { max-width: 850px; margin-bottom: 36px; }
 .koreops-page .koreops-section-heading h2 { font-size: clamp(26px, 2.5vw, 36px); letter-spacing: -.025em; color: var(--ko-ink); }
@@ -82,7 +88,7 @@
 .koreops-page .koreops-cta h2 { color: #19384c; }
 .koreops-page .koreops-cta p { color: #526b7b; }
 .koreops-page .koreops-cta .btn-outline-primary { color: #087d9e; border-color: #8bc3d0; }
-.koreops-page :is(button,a):focus-visible { outline: 3px solid #31bca5; outline-offset: 4px; }
+.koreops-page :is(button,a,summary):focus-visible { outline: 3px solid var(--ko-accent); outline-offset: 4px; }
 @media (hover: hover) {
     .koreops-page :is(.koreops-challenge-card,.koreops-capability-card,.koreops-scenario-card):hover { transform: translateY(-6px); border-color: #7bcbbd; box-shadow: 0 18px 35px #17394012; }
 }
@@ -106,10 +112,11 @@
 @media (max-width: 991.98px) {
     .koreops-page .koreops-intro-layout { grid-template-columns: 1fr; gap: 45px; }
     .koreops-console { max-width: 600px; width: 100%; justify-self: center; transform: none; }
-    .koreops-page .koreops-detail section { padding: 56px 0; }
+    .koreops-page { --ko-section-space: 48px; }
 }
 @media (max-width: 767.98px) {
-    .koreops-page .koreops-detail section { padding: 44px 0; scroll-margin-top: 90px; }
+    .koreops-page { --ko-section-space: 40px; }
+    .koreops-page .koreops-detail section { scroll-margin-top: 90px; }
     .koreops-page .koreops-page-nav { flex-wrap: nowrap; overflow-x: auto; padding-block: 12px; }
     .koreops-page .koreops-page-nav a { flex-shrink: 0; padding: 10px 13px; }
     .koreops-console-body { padding: 20px 16px; }
@@ -124,41 +131,47 @@
 /* One primary lifecycle demo; supporting detail stays available on demand. */
 .koreops-page .koreops-flow-demo.is-enhanced { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 48px; }
 .ko-flow-map { position: relative; min-width: 0; }
-.koreops-page .is-enhanced .koreops-workflow-list { display: block; position: relative; height: 520px; }
-.koreops-page .is-enhanced .koreops-workflow-list::before { content: ""; position: absolute; inset: 75px 70px; border: 1px dashed #a4cdd7; border-radius: 50%; }
-.koreops-page .is-enhanced .koreops-workflow-list li { position: absolute; width: 118px; border: 1px solid #d5e6eb; background: #fff; border-radius: 12px; box-shadow: 0 6px 18px #1a718709; transition: border-color .3s, background .3s, box-shadow .3s; }
-.koreops-page .is-enhanced .koreops-workflow-list li::before { top: 9px; left: 12px; font-size: 10px; }
-.koreops-page .is-enhanced .koreops-flow-step { min-height: 98px; padding: 30px 12px 12px; }
-.koreops-page .is-enhanced .koreops-flow-step small { font-size: 11px; }
-.koreops-page .is-enhanced .koreops-workflow-list li:nth-child(1) { top: 0; left: calc(50% - 59px); }
+.koreops-page .is-enhanced .koreops-workflow-list { display: block; position: relative; height: 500px; }
+.koreops-page .is-enhanced .koreops-workflow-list::before { content: none; }
+.ko-flow-connectors { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.ko-flow-connectors path { fill: none; vector-effect: non-scaling-stroke; }
+.ko-flow-route-base { stroke: #b9d7e1; stroke-width: 1.5; stroke-dasharray: 4 5; }
+.ko-flow-route-highlight { stroke: #83b9c9; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; }
+.ko-flow-route-highlight.is-reached { stroke-dashoffset: 0; opacity: 1; }
+.ko-flow-route-highlight.is-active { stroke: var(--ko-accent); stroke-width: 3; }
+.koreops-page .is-enhanced .koreops-workflow-list li { position: absolute; width: 140px; border: 1px solid #d5e6eb; background: #fff; border-radius: 12px; box-shadow: 0 6px 18px #1a718709; transition: border-color .3s, background .3s, box-shadow .3s; }
+.koreops-page .is-enhanced .koreops-workflow-list li::before { top: 9px; left: 12px; font-size: 12px; }
+.koreops-page .is-enhanced .koreops-flow-step { min-height: 100px; padding: 30px 12px 12px; }
+.koreops-page .is-enhanced .koreops-flow-step small { font-size: 13px; color: var(--ko-muted); }
+.koreops-page .is-enhanced .koreops-workflow-list li:nth-child(1) { top: 0; left: calc(50% - 70px); }
 .koreops-page .is-enhanced .koreops-workflow-list li:nth-child(2) { top: 62px; right: 0; }
-.koreops-page .is-enhanced .koreops-workflow-list li:nth-child(3) { top: 210px; right: 0; }
+.koreops-page .is-enhanced .koreops-workflow-list li:nth-child(3) { top: 200px; right: 0; }
 .koreops-page .is-enhanced .koreops-workflow-list li:nth-child(4) { bottom: 62px; right: 0; }
-.koreops-page .is-enhanced .koreops-workflow-list li:nth-child(5) { bottom: 0; left: calc(50% - 59px); }
+.koreops-page .is-enhanced .koreops-workflow-list li:nth-child(5) { bottom: 0; left: calc(50% - 70px); }
 .koreops-page .is-enhanced .koreops-workflow-list li:nth-child(6) { bottom: 62px; left: 0; }
-.koreops-page .is-enhanced .koreops-workflow-list li:nth-child(7) { top: 210px; left: 0; }
+.koreops-page .is-enhanced .koreops-workflow-list li:nth-child(7) { top: 200px; left: 0; }
 .koreops-page .is-enhanced .koreops-workflow-list li:nth-child(8) { top: 62px; left: 0; }
 .koreops-page .is-enhanced .koreops-workflow-list .is-current { border-color: #087d9e; background: #e8f6fa; box-shadow: 0 0 0 4px #087d9e0c, 0 10px 24px #087d9e12; }
 .koreops-page .is-enhanced .koreops-workflow-list .is-current :is(strong,small), .koreops-page .is-enhanced .koreops-workflow-list .is-current::before { color: #076c89; }
 .koreops-page .is-enhanced .koreops-workflow-list .is-complete { border-color: #abd4dd; }
-.ko-flow-hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 156px; height: 156px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; background: #fff; box-shadow: 0 12px 35px #175d7710; pointer-events: none; }
+.ko-flow-hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 152px; height: 152px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; background: #fff; box-shadow: 0 12px 35px #175d7710; pointer-events: none; }
 .ko-flow-hub::before { content: ""; position: absolute; inset: -8px; border-radius: 50%; background: conic-gradient(#1697af var(--flow-progress),#dfedf2 0); z-index: -2; }
 .ko-flow-hub::after { content: ""; position: absolute; inset: -4px; background: #fff; border-radius: 50%; z-index: -1; }
 .ko-flow-hub span { color: #547180; font-size: 12px; letter-spacing: .12em; }
-.ko-flow-hub strong { font-size: 50px; font-weight: 400; line-height: 1.3; color: #087d9e; }
-.ko-flow-hub small { color: #6b8390; font-size: 10px; }
-.koreops-page .is-enhanced .koreops-flow-detail { display: flex; align-items: flex-start; flex-direction: column; gap: 24px; min-height: 430px; border: 0; border-left: 1px solid #d5e6eb; border-radius: 0; background: transparent; box-shadow: none; margin: 0; padding: 24px 0 24px 40px; }
+.ko-flow-hub strong { font-size: 40px; font-weight: 400; line-height: 1.3; color: #087d9e; }
+.ko-flow-hub small { color: var(--ko-muted); font-size: 12px; max-width: none; white-space: nowrap; text-align: center; line-height: 1.6; }
+.koreops-page .is-enhanced .koreops-flow-detail { display: flex; align-items: flex-start; flex-direction: column; gap: 20px; min-height: 340px; border: 0; border-left: 1px solid #d5e6eb; border-radius: 0; background: transparent; box-shadow: none; margin: 0; padding: 24px 0 24px 40px; }
 .koreops-page .is-enhanced .koreops-flow-symbol { width: 60px; height: 60px; font-size: 24px; border-radius: 16px; box-shadow: none; background: #e7f5f8; animation: none; }
 .koreops-page .koreops-flow-copy h3 { font-size: 30px; }
 .koreops-page .koreops-flow-copy > p:not(.koreops-eyebrow) { line-height: 1.9; }
-.koreops-page .koreops-flow-controls { display: grid; grid-template-columns: 1fr 1fr; width: 100%; margin-top: auto; }
+.koreops-page .koreops-flow-controls { display: grid; grid-template-columns: 1fr 1fr; width: 100%; margin-top: 0; }
 .koreops-page .koreops-flow-controls small { grid-column: 1 / -1; }
-.ko-audience-line { margin: 12px 0 0; font-size: 12px; color: #667e8d; }
+.ko-audience-line { margin: 12px 0 0; font-size: 14px; color: var(--ko-muted); }
 .ko-value-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; }
 .ko-value-grid article { padding: 8px 28px 8px 0; border-right: 1px solid #d5e5ec; }
 .ko-value-grid article:last-child { border: 0; padding-right: 0; }
 .ko-value-index { display: block; color: #087d9e; font-size: 12px; letter-spacing: .06em; margin-bottom: 16px; }
-.ko-value-grid h3 { font-size: 21px; margin-bottom: 12px; }
+.ko-value-grid h3 { font-size: 21px; line-height: 1.55; min-height: 3.1em; margin-bottom: 12px; }
 .ko-value-grid p { margin: 0; color: #526b7b; font-size: 15px; }
 .ko-capability-summary { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 40px; }
 .ko-capability-summary article { display: flex; align-items: flex-start; gap: 20px; padding: 28px 0; border-top: 1px solid #cfdee5; min-width: 0; scroll-margin-top: calc(var(--site-navbar-height,84px) + 90px); }
@@ -166,7 +179,7 @@
 .ko-capability-summary .koreops-card-icon { flex: 0 0 44px; width: 44px; height: 44px; background: #e2eff4; color: #087d9e; }
 .ko-capability-summary h3 { font-size: 22px; margin: 0 0 12px; }
 .ko-capability-summary p { font-size: 15px; margin: 0 0 12px; color: #526b7b; }
-.ko-capability-summary summary { cursor: pointer; color: #087d9e; font-size: 13px; padding: 8px 0; }
+.ko-capability-summary summary { cursor: pointer; color: #087d9e; font-size: 14px; padding: 12px 0; }
 .ko-capability-summary ul { color: #526b7b; font-size: 14px; line-height: 1.85; padding-left: 19px; margin: 10px 0 0; }
 .ko-capability-summary li + li { margin-top: 6px; }
 .ko-execution-details { margin-top: 32px; border: 1px solid #d5e6ec; border-radius: 12px; background: #fff; scroll-margin-top: calc(var(--site-navbar-height,84px) + 90px); }
@@ -185,7 +198,7 @@
 .koreops-page #capabilities { padding-top: clamp(32px, 4vw, 40px); }
 @media (max-width: 1199.98px) {
     .koreops-page .koreops-flow-demo.is-enhanced { gap: 24px; }
-    .ko-flow-hub { width: 126px; height: 126px; }
+    .ko-flow-hub { width: 144px; height: 144px; }
     .ko-flow-hub strong { font-size: 40px; }
 }
 @media (max-width: 991.98px) {
@@ -199,25 +212,26 @@
     .koreops-page .koreops-detail section { scroll-margin-top: calc(var(--site-navbar-height,84px) + 85px); }
     .koreops-page .is-enhanced .koreops-workflow-list { height: auto; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
     .koreops-page .is-enhanced .koreops-workflow-list li:nth-child(n) { position: relative; width: auto; inset: auto; }
-    .koreops-page .is-enhanced .koreops-workflow-list::before,.ko-flow-hub { display: none; }
+    .koreops-page .is-enhanced .koreops-workflow-list::before,.ko-flow-hub,.ko-flow-connectors { display: none; }
     .ko-value-grid,.ko-capability-summary { grid-template-columns: 1fr; }
     .ko-value-grid { gap: 22px; }
     .ko-value-grid article { padding: 0 0 22px; border-right: 0; border-bottom: 1px solid #d5e5ec; }
     .ko-value-grid article:last-child { padding-bottom: 0; }
     .ko-value-index { margin-bottom: 10px; }
+    .ko-value-grid h3 { min-height: 0; }
     .ko-details-hint { display: none; }
-    .ko-execution-details > summary { padding: 18px; font-size: 14px; }
+    .ko-execution-details > summary { padding: 18px; font-size: 15px; }
     .ko-execution-body { padding: 0 18px 18px; }
 }
 /* Deployment: aligned introduction, horizontal management path, separate host zone. */
-.koreops-page #deployment { background: #fff; padding-block: 56px; scroll-margin-top: 76px; }
+.koreops-page #deployment { background: #fff; padding-block: var(--ko-section-space); scroll-margin-top: 76px; }
 .koreops-page .koreops-deployment-layout { grid-template-columns: minmax(0,1fr); gap: 28px; align-items: start; }
 .koreops-page .koreops-deployment-copy { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0 64px; align-items: start; }
 .koreops-page .koreops-deployment-copy > .koreops-eyebrow { grid-column: 1 / -1; color: #087d9e; font-size: 12px; letter-spacing: .12em; margin-bottom: 12px; }
 .koreops-page .koreops-deployment-copy h2 { grid-column: 1; font-size: clamp(26px,2.5vw,36px); margin-bottom: 14px; }
 .koreops-page .koreops-deployment-copy > p:not(.koreops-eyebrow) { grid-column: 1; margin: 0; font-size: 15px; }
 .koreops-page .koreops-deploy-points { grid-column: 2; grid-row: 2 / 4; margin: 0; padding-left: 24px; border-left: 1px solid #dce8ee; }
-.koreops-page .koreops-deploy-points li { font-size: 13px; margin-top: 0; margin-bottom: 10px; }
+.koreops-page .koreops-deploy-points li { font-size: 15px; margin-top: 0; margin-bottom: 10px; }
 .koreops-page #deployment .koreops-topology { padding: 28px; background: linear-gradient(135deg,#f7fbfd,#f1f8fa); border: 1px solid #d5e6ed; box-shadow: none; border-radius: 18px; }
 .koreops-page #deployment .koreops-topology figcaption { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-bottom: 24px; }
 .koreops-page #deployment figcaption strong { color: #264b60; font-size: 18px; }
@@ -230,7 +244,7 @@
 .ko-architecture-node > i { grid-row: 2 / 4; display: grid; place-items: center; width: 40px; height: 44px; font-size: 25px; color: #21849c; }
 .ko-architecture-node .ko-node-logo { grid-row: 2 / 4; width: 48px; height: auto; justify-self: center; }
 .ko-architecture-node strong { color: #244c61; font-size: 17px; line-height: 1.4; }
-.ko-architecture-node small { grid-column: 2; color: #496779; font-size: 12px; line-height: 1.6; }
+.ko-architecture-node small { grid-column: 2; color: #496779; font-size: 14px; line-height: 1.6; }
 .ko-business-node { border-color: #8ebfce; background: #eaf6f9; box-shadow: 0 5px 16px #087d9e09; }
 .ko-architecture-arrow { display: flex; align-items: center; flex-direction: column; color: #75a9b9; }
 .ko-architecture-arrow span { font-size: 12px; color: #496779; }.ko-architecture-arrow i { font-size: 27px; line-height: 1.2; font-style: normal; }
@@ -245,14 +259,14 @@
 .ko-access-copy, .koreops-page #deployment .koreops-agent-route { min-width: 0; }
 .ko-access-copy h3 { font-size: 17px; margin: 8px 0 16px; color: #244c61; }
 .koreops-page #deployment .koreops-topology-modes { display: inline-flex; width: 280px; max-width: 100%; gap: 3px; background: #eaf2f6; padding: 4px; border-radius: 8px; margin: 0; }
-.koreops-page #deployment .koreops-topology-modes button { border: 0; background: transparent; padding: 7px 12px; font-size: 12px; color: #667f8b; border-radius: 5px; white-space: nowrap; }
+.koreops-page #deployment .koreops-topology-modes button { border: 0; background: transparent; min-height: 44px; padding: 9px 12px; font-size: 14px; color: var(--ko-muted); border-radius: 5px; white-space: nowrap; }
 .koreops-page #deployment .koreops-topology-modes button[aria-pressed="true"] { background: #fff; color: #087d9e; box-shadow: 0 2px 8px #214f6112; }
-.koreops-page #deployment .koreops-topology-note { margin: 12px 0 0; font-size: 13px; color: #496779; line-height: 1.8; min-height: 3.6em; max-width: 420px; }
+.koreops-page #deployment .koreops-topology-note { margin: 12px 0 0; font-size: 14px; color: #496779; line-height: 1.8; min-height: 3.6em; max-width: 420px; }
 .koreops-page #deployment .koreops-agent-route { min-height: 175px; display: flex; justify-content: center; flex-direction: column; }
 .koreops-page #deployment .koreops-topology-hosts { gap: 14px; }
 .koreops-page #deployment .koreops-topology-hosts > div { display: grid; grid-template-columns: 36px 1fr; text-align: left; gap: 4px 12px; padding: 18px; border-radius: 9px; border-color: #d5e6ed; background: #fff; }
 .koreops-page #deployment .koreops-topology-hosts i { grid-row: 1 / 4; align-self: center; margin: 0; font-size: 26px; }
-.koreops-page #deployment .koreops-topology-hosts small { grid-column: 2; font-size: 12px; color: #496779; }
+.koreops-page #deployment .koreops-topology-hosts small { grid-column: 2; font-size: 13px; color: #496779; }
 .ko-host-mode { grid-column: 2; justify-self: start; display: inline-block; padding: 3px 7px; border-radius: 4px; background: #eaf6f9; color: #176780; font-size: 12px; line-height: 1.5; }
 .koreops-page #deployment .koreops-relay-node { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #eaf6f9; border: 1px solid #b6dbe7; border-radius: 8px; color: #287a92; font-size: 12px; }
 .koreops-relay-node small { color: #496779; margin-left: auto; font-size: 12px; }
@@ -260,9 +274,7 @@
 .koreops-page #deployment .koreops-deployment-details { margin: 0; border: 0; border-top: 1px solid #dce8ee; border-bottom: 1px solid #dce8ee; border-radius: 0; }
 .koreops-page #deployment .koreops-deployment-details summary { padding: 17px 0; color: #396a7f; font-size: 14px; }
 .koreops-page #deployment .koreops-deployment-details p { padding: 0 0 16px; font-size: 14px; }
-@media (prefers-reduced-motion: no-preference) {
-    .koreops-relay-node:not([hidden]) { animation: koreops-detail-enter .3s ease-out; }
-}
+/* Agent transitions are coordinated in koreops.js to avoid competing transforms. */
 @media (max-width: 1199.98px) {
     .ko-architecture-lanes, .ko-architecture-bridge { grid-template-columns: 1fr 45px 1.1fr 45px 1fr; }
     .ko-architecture-node { padding: 16px; grid-template-columns: 1fr; gap: 8px; }
@@ -288,6 +300,56 @@
     .koreops-page #deployment .koreops-topology-hosts > div { display: block; text-align: center; padding: 14px 8px; }
     .ko-host-mode { margin: 6px 0; }
     .koreops-page #deployment .koreops-topology-hosts i { margin-bottom: 8px; }.koreops-relay-node small { display: none; }
+}
+/* Shared reading and disclosure treatment within the product detail page. */
+.koreops-page .koreops-detail :is(.ko-value-grid p,.ko-capability-summary p,.ko-execution-list p,.koreops-deployment-details p,.koreops-case-copy p) { font-size: 16px; line-height: 1.8; color: var(--ko-muted); }
+.koreops-page .koreops-section-heading > p:not(.koreops-eyebrow) { max-width: 46em; font-size: 16px; line-height: 1.8; color: var(--ko-muted); }
+.koreops-page .koreops-flow-copy { min-width: 0; width: 100%; }
+.koreops-page .koreops-flow-copy > p[data-flow-description] { min-height: 5.4em; font-size: 16px; line-height: 1.8; }
+.koreops-page .koreops-flow-evidence { padding: 12px 14px; background: var(--ko-soft); border-radius: 8px; }
+.koreops-page .ko-architecture-node { min-width: 0; }
+.koreops-page .ko-architecture-node small { overflow-wrap: anywhere; }
+.koreops-page .koreops-detail details > summary {
+    display: flex; align-items: center; gap: 12px; min-height: 48px;
+    list-style: none; border-radius: 6px; line-height: 1.65;
+}
+.koreops-page .koreops-detail details > summary::-webkit-details-marker { display: none; }
+.koreops-page .koreops-detail details > summary::marker { content: ""; }
+.koreops-page .koreops-detail details > summary::after {
+    content: ""; flex: 0 0 8px; width: 8px; height: 8px; margin: 0 6px 4px auto;
+    border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+    transform: rotate(45deg); transition: transform .2s;
+}
+.koreops-page .koreops-detail details[open] > summary { color: #076681; }
+.koreops-page .koreops-detail details[open] > summary::after { transform: rotate(225deg); margin-bottom: 0; }
+.koreops-page .ko-details-hint { float: none; margin-left: auto; white-space: nowrap; }
+.koreops-page .ko-execution-details > summary::after { margin-left: 0; }
+.koreops-page .ko-execution-details > summary > span:first-child { flex: 1; }
+@media (hover: hover) {
+    .koreops-page .koreops-detail details > summary:hover { background: var(--ko-soft); color: #076681; }
+}
+@media (max-width: 767.98px) {
+    .koreops-page .koreops-intro-layout { gap: 32px; }
+    .koreops-page .koreops-product-name { font-size: 16px; }
+    .koreops-page .koreops-page-nav a { min-height: 44px; }
+    .koreops-page .koreops-page-nav { scroll-padding-inline: 12px; }
+    .koreops-page .is-enhanced .koreops-flow-step { height: 100%; min-height: 112px; }
+    .koreops-page .koreops-flow-copy h3 { font-size: 26px; }
+    .koreops-page .koreops-flow-copy > p[data-flow-description] { min-height: 7.2em; }
+    .koreops-page .ko-capability-summary article { gap: 14px; padding-block: 24px; }
+    .koreops-page .ko-capability-summary h3 { font-size: 20px; }
+    .koreops-page .ko-capability-summary .koreops-card-icon { flex-basis: 36px; width: 36px; height: 36px; border-radius: 10px; }
+}
+@media (max-width: 379.98px) {
+    .koreops-page .koreops-console-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
+    .koreops-page .koreops-orbit-node { gap: 5px; padding: 8px 10px; }
+}
+@keyframes ko-node-emphasis {
+    from { box-shadow: 0 0 0 0 #087d9e24; }
+    to { box-shadow: 0 0 0 6px #087d9e00; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .koreops-page .is-enhanced .koreops-workflow-list .is-current { animation: ko-node-emphasis .4s ease-out; }
 }
 @media (prefers-reduced-motion: reduce) {
     .koreops-page *, .koreops-page *::before, .koreops-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
