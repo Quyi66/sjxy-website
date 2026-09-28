@@ -2,6 +2,7 @@
     'use strict';
     var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     var scenes = {
+        'koreops.html': { name: 'KOREOPS / CORE CAPABILITIES', icon: 'fa fa-shield-alt', center: 'KoreOps 核心功能', nodes: ['CVE 分析', '执行前校验', '补丁与回滚', '审批审计'], caption: '连接漏洞发现、补丁执行与审计留痕', kind: 'platform', visualLabel: '补丁运维流程示意', detailLabel: '查看平台详情' },
         'directory1.html': { name: 'LINUX SUPPORT', icon: 'fab fa-linux', center: 'Linux 运行平台', nodes: ['技术支持', '性能调优', '持续运维'], caption: '为企业核心系统提供稳定的技术支撑', kind: 'platform' },
         'directory2.html': { name: 'OPERATIONS & DEVELOPMENT', icon: 'fa fa-cogs', center: '自动化运维体系', nodes: ['运维支持', '技术咨询', '定制开发'], caption: '连接业务需求、运维流程与自动化工具', kind: 'pipeline' },
         'directory3.html': { name: 'CONTAINERS & CLOUD NATIVE', icon: 'fa fa-cubes', center: 'Kubernetes', nodes: ['应用部署', '容器编排', 'DevOps 协作'], caption: '从应用交付到容器管理，连接开发与运维', kind: 'cluster' },
@@ -19,9 +20,9 @@
         var artwork = window.SJXYServiceScenes && window.SJXYServiceScenes(href, catalogue);
         var visual = el('div', 'showcase-visual');
         visual.setAttribute('role', 'img');
-        visual.setAttribute('aria-label', scene.center + '：' + scene.nodes.join('、') + '。' + scene.caption);
+        visual.setAttribute('aria-label', scene.center + '：' + scene.nodes.join('、') + (scene.caption ? '。' + scene.caption : ''));
         var header = el('div', 'showcase-visual-header');
-        header.append(el('span', '', scene.name), el('span', '', '技术服务示意'));
+        header.append(el('span', '', scene.name), el('span', '', scene.visualLabel || '技术服务示意'));
         visual.append(header);
         if (artwork) {
             visual.dataset.scene = artwork.key;
@@ -29,9 +30,9 @@
             art.innerHTML = artwork.markup;
             visual.append(art);
         } else {
-            visual.append(el('p', 'showcase-artwork-fallback', scene.caption));
+            visual.append(el('p', 'showcase-artwork-fallback', scene.caption || scene.nodes.join(' · ')));
         }
-        visual.append(el('p', 'showcase-visual-caption', scene.caption));
+        if (scene.caption) visual.append(el('p', 'showcase-visual-caption', scene.caption));
         return visual;
     }
     document.querySelectorAll('[data-service-showcase]').forEach(function (section, group) {
@@ -73,11 +74,12 @@
             var track = el('span', 'showcase-track'); track.setAttribute('aria-hidden', 'true'); track.append(el('span'));
             button.append(track); tabs.append(button); buttons.push(button);
             var panel = el('div', 'showcase-panel'); panel.id = prefix + '-panel-' + index;
+            if (item.href === 'koreops.html') panel.classList.add('showcase-panel-koreops');
             panel.setAttribute('role', 'tabpanel'); panel.setAttribute('aria-labelledby', button.id); panel.tabIndex = 0;
             var copy = el('div', 'showcase-copy');
             copy.append(el('p', 'showcase-overline', item.scene.name), el('h3', '', item.title), el('p', 'showcase-description', item.description));
             var list = el('ul', 'showcase-points'); item.points.forEach(function (point) { list.append(el('li', '', point)); });
-            var link = el('a', 'btn btn-outline-primary showcase-detail', '查看服务详情'); link.href = item.href;
+            var link = el('a', 'btn btn-outline-primary showcase-detail', item.scene.detailLabel || '查看服务详情'); link.href = item.href;
             var arrow = el('span', '', '→'); arrow.setAttribute('aria-hidden', 'true'); link.append(arrow);
             copy.append(list, link); panel.append(diagram(item.scene, item.href, catalogue), copy); stage.append(panel); panels.push(panel);
         });

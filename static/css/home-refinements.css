@@ -24,8 +24,8 @@
 .technology-card strong { font-size: 18px; font-weight: 600; }
 .technology-card small { margin-top: 4px; font-size: 14px; font-weight: 400; color: #536074; }
 .homepage > .container-fluid.py-5 { border-bottom: 1px solid #dce3ea; }
-.homepage > #main-content { background: #fff; }
-.homepage > #main-content > .container { padding-top: 24px !important; padding-bottom: 24px !important; }
+.homepage > #main-content:not(.koreops-feature):not([data-service-showcase]) { background: #fff; }
+.homepage > #main-content:not(.koreops-feature):not([data-service-showcase]) > .container { padding-top: 24px !important; padding-bottom: 24px !important; }
 .homepage #header-carousel { min-height: 0; }
 .homepage .hero-layout {
     max-width: 1160px;

@@ -77,7 +77,7 @@ body > .bg-dark.mt-5 .link-animated > .static-label { font-size: 15px; color: #5
 .homepage > .container-fluid.py-5:not([data-service-showcase]):not(.bg-dark) > .container.py-5 {
     padding-block: 0 !important;
 }
-.homepage > #main-content > .container { padding-block: 0 !important; }
+.homepage > #main-content:not([data-service-showcase]) > .container { padding-block: 0 !important; }
 .homepage > .container-fluid.ui-section-compact.py-5:not([data-service-showcase]):not(.bg-dark) { padding-block: var(--ui-space-compact) !important; }
 .homepage .ui-section-compact .section-title h2 { font-size: clamp(26px,2vw,32px); }
 .homepage > .container-fluid:has(.milestone-carousel) { background: var(--light); }

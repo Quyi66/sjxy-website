@@ -1,6 +1,23 @@
 /* Homepage product introduction; scoped away from the detail and catalog pages. */
-.homepage .koreops-feature { position: relative; padding: 76px 0; background: linear-gradient(110deg,#fff 35%,#f3f9fb); overflow: hidden; }
-.homepage .koreops-feature::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(#7ca8b61c .7px,transparent .7px); background-size: 20px 20px; mask-image: linear-gradient(90deg,transparent 45%,#000); pointer-events: none; }
+.homepage #main-content.koreops-feature,
+.homepage .koreops-feature {
+    position: relative;
+    padding: 72px 0;
+    background: linear-gradient(180deg, #f2f7fa 0%, #edf5f9 100%);
+    border-top: 1px solid #dce8ee;
+    border-bottom: 1px solid #dce8ee;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+}
+.homepage .koreops-feature::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#7ca8b624 1px, transparent 1px);
+    background-size: 24px 24px;
+    mask-image: linear-gradient(90deg, transparent 15%, #000 85%);
+    pointer-events: none;
+}
 .homepage .koreops-feature-layout { position: relative; grid-template-columns: minmax(0,.95fr) minmax(0,1.05fr); gap: 72px; align-items: center; }
 .homepage .koreops-feature .koreops-eyebrow { display: flex; align-items: center; gap: 10px; color: #087d9e; font-size: 12px; letter-spacing: .09em; margin-bottom: 24px; }
 .homepage .koreops-feature .koreops-eyebrow::before { content: ""; width: 22px; height: 2px; background: #087d9e; }
@@ -46,10 +63,12 @@
     .homepage .koreops-feature-layout { gap: 36px; }.hk-workspace figcaption { padding: 18px; }.hk-workspace-body { padding: 16px; }.hk-step-tag { display: none; }.hk-lifecycle li { grid-template-columns: 42px minmax(0,1fr); }
 }
 @media (max-width: 991.98px) {
-    .homepage .koreops-feature-layout { grid-template-columns: 1fr; gap: 36px; }.homepage .koreops-feature .koreops-lead { max-width: 620px; }.hk-workspace { width: 100%; max-width: 640px; }.homepage .koreops-feature { padding: 56px 0; }
+    .homepage .koreops-feature-layout { grid-template-columns: 1fr; gap: 36px; }.homepage .koreops-feature .koreops-lead { max-width: 620px; }.hk-workspace { width: 100%; max-width: 640px; }
+    .homepage #main-content.koreops-feature, .homepage .koreops-feature { padding: 56px 0; }
 }
 @media (max-width: 479.98px) {
-    .homepage .koreops-feature { padding: 40px 0; }.hk-preview-label { display: none; }.hk-workspace-body { padding: 14px 10px; }.hk-lifecycle li { padding: 14px 10px; gap: 10px; }.hk-lifecycle::before { left: 30px; }.hk-inputs { gap: 10px; font-size: 11px; }.hk-input-caption { font-size: 10px; }.hk-lifecycle strong { font-size: 16px; }.hk-lifecycle p { font-size: 11px; }
+    .homepage #main-content.koreops-feature, .homepage .koreops-feature { padding: 40px 0; }
+    .hk-preview-label { display: none; }.hk-workspace-body { padding: 14px 10px; }.hk-lifecycle li { padding: 14px 10px; gap: 10px; }.hk-lifecycle::before { left: 30px; }.hk-inputs { gap: 10px; font-size: 11px; }.hk-input-caption { font-size: 10px; }.hk-lifecycle strong { font-size: 16px; }.hk-lifecycle p { font-size: 11px; }
 }
 @media (prefers-reduced-motion: reduce) {
     .homepage .koreops-feature *, .homepage .koreops-feature *::before { animation: none !important; transition: none !important; }

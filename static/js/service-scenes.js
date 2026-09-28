@@ -17,6 +17,31 @@
         return s;
     }
     var renderers = {
+        koreops: function () {
+            var s = box(35, 35, 530, 260, 'scene-terminal') + box(35, 35, 530, 36, 'scene-soft');
+            s += circle(54, 53, 4, 'scene-accent') + circle(69, 53, 4, 'scene-muted-fill') + circle(84, 53, 4, 'scene-muted-fill');
+            s += text(109, 59, 'KoreOps / 补丁运维', 'scene-small');
+            s += flow('M201 154H227 M373 154H399');
+            s += path('M219 149l8 5-8 5 M391 149l8 5-8 5');
+            [
+                { x: 55, title: 'CVE 分析', detail: '定位受影响主机' },
+                { x: 227, title: '执行前校验', detail: '检查依赖与环境' },
+                { x: 399, title: '补丁执行', detail: '安装并验证结果' }
+            ].forEach(function (step, i) {
+                s += box(step.x, 104, 146, 96, i === 2 ? 'scene-soft' : 'scene-box');
+                s += text(step.x + 16, 128, '0' + (i + 1), 'scene-small');
+                s += text(step.x + 73, 154, step.title, 'scene-title', 'middle');
+                s += text(step.x + 73, 180, step.detail, 'scene-small', 'middle');
+                s += group(circle(step.x + 128, 122, 3, 'scene-accent'), 'scene-motion scene-step', i * .8);
+            });
+            // Rollback is a separate branch, not a return to preflight validation.
+            s += flow('M472 200v24H440');
+            s += path('M448 219l-8 5 8 5');
+            s += box(240, 212, 200, 24, 'scene-terminal', 4) + text(340, 229, '按原作业批次回滚', 'scene-small', 'middle');
+            s += path('M55 250H545', 'scene-route');
+            s += text(300, 271, '审批管控 · 执行留痕 · 审计追溯', 'scene-small', 'middle');
+            return s;
+        },
         linux: function () {
             var s = box(35, 35, 350, 260, 'scene-terminal') + box(35, 35, 350, 36, 'scene-soft');
             s += circle(54, 53, 4, 'scene-accent') + circle(69, 53, 4, 'scene-muted-fill') + circle(84, 53, 4, 'scene-muted-fill');
@@ -127,7 +152,7 @@
             return s;
         }
     };
-    var business = {'directory1.html':'linux','directory2.html':'automation','directory3.html':'containers','directory4.html':'infrastructure','directory5.html':'migration','directory6.html':'learning'};
+    var business = {'koreops.html':'koreops','directory1.html':'linux','directory2.html':'automation','directory3.html':'containers','directory4.html':'infrastructure','directory5.html':'migration','directory6.html':'learning'};
     var catalogue = {'directory2.html':'automation','directory3.html':'delivery','directory4.html':'resources','directory5.html':'roadmap','directory6.html':'growth'};
     window.SJXYServiceScenes = function (href, isCatalogue) {
         var key = (isCatalogue ? catalogue : business)[href];
