@@ -149,7 +149,6 @@ body>.container-fluid.bg-dark:first-of-type .col-lg-8{width:100%}
 .bg-header>.container{padding-top:28px!important;padding-bottom:28px!important}
 .bg-header .row{padding-top:0!important;padding-bottom:0!important}
 .bg-header > .row { margin-left: 0; margin-right: 0; }
-.mb-x:has(> img) { text-indent: 0; }
 .mb-x > img { display: block; max-width: 100%; height: auto; }
 .bg-header h1{color:var(--dark)!important;font-size:clamp(28px,3.3vw,46px);max-width:1000px;margin-left:auto;margin-right:auto}
 .bg-header a{color:#64748b!important}.bg-header a:hover{color:#087d9e!important}
@@ -317,7 +316,7 @@ body > .container-fluid.facts.py-5 { padding: 0 !important; margin: 0; backgroun
 
 .section-title > h5 { display: inline-block; padding: 5px 12px; background: var(--brand-cyan-soft); border: 1px solid var(--brand-cyan-border); border-radius: 5px; font-size: 13px; }
 .section-title h1 { text-wrap: balance; letter-spacing: -.035em; }
-body > .container-fluid.py-5:has(.blog-item) { background: #f0f4fa; border-top: 1px solid #e5ebf4; border-bottom: 1px solid #e5ebf4; }
+body > .container-fluid.py-5.values-section { background: #f0f4fa; border-top: 1px solid #e5ebf4; border-bottom: 1px solid #e5ebf4; }
 .blog-item, .team-item { border-color: #dce5f1; box-shadow: 0 8px 28px #17243c08; }
 .blog-item .p-4 { padding: 28px !important; }
 .blog-item h4, .team-item h4 { font-size: 23px; }
@@ -325,13 +324,16 @@ body > .container-fluid.py-5:has(.blog-item) { background: #f0f4fa; border-top: 
 .blog-img img { height: 180px; }
 .blog-img > a { background: var(--brand-cyan) !important; }
 .blog-item .text-uppercase { font-size: 14px; font-weight: 600; }
-body > .container-fluid.py-5:has(.service-item) {
+body > .container-fluid.py-5.home-services,
+body > .container-fluid.py-5.product-services {
     background: linear-gradient(120deg, #142841, #1b3857);
     padding-top: 64px !important;
     padding-bottom: 64px !important;
 }
-body > .container-fluid.py-5:has(.service-item) .section-title h1 { color:#f4f8ff; }
-body > .container-fluid.py-5:has(.service-item) .section-title > h5 { color:#bde8f4 !important; background: #06a3da10; border-color: #06a3da30; }
+body > .container-fluid.py-5.home-services .section-title h1,
+body > .container-fluid.py-5.product-services .section-title h1 { color:#f4f8ff; }
+body > .container-fluid.py-5.home-services .section-title > h5,
+body > .container-fluid.py-5.product-services .section-title > h5 { color:#bde8f4 !important; background: #06a3da10; border-color: #06a3da30; }
 .service-item { height: 100%; min-height: 330px; border-color: #fff; background: #fff !important; box-shadow: 0 12px 24px #06132914; }
 .service-item .service-icon { border: 1px solid #dbe6fb; background: #edf3ff; }
 
@@ -341,7 +343,6 @@ body > .container-fluid.py-5:has(.service-item) .section-title > h5 { color:#bde
 .container > .row.g-0 > .col-lg-4 .border-bottom { background: #f4f7fc; }
 .container > .row.g-0 > .col-lg-4:nth-child(2) > .rounded { border-top-color: #218c9d; }
 .container > .row.g-0 > .col-lg-4:nth-child(3) > .rounded { border-top-color: #6f70c0; }
-body > .container-fluid.py-5:has(form) { background: #edf3fb; border-top: 1px solid #dce6f3; }
 .testimonial-carousel .testimonial-item { border-top: 3px solid #8aaee6; box-shadow: 0 8px 20px #1c3b6508; }
 .testimonial-carousel .border-bottom { background: #f1f5fb; }
 .bg-header { background: linear-gradient(110deg, #e4edfb, #f5f8fd) !important; border-bottom: 1px solid #ccdbee; }
@@ -358,7 +359,8 @@ img[src*="abstract-"]:not(.blog-img img):not(.team-img img) { border: 1px solid 
     .carousel-caption :is(h1,h2) { font-size: 32px; }
     #header-carousel .hero-background { height: 440px; }
     .facts .col-lg-4 > div { height: 54px !important; }
-    body > .container-fluid.py-5:has(.service-item) { padding: 32px 0 !important; }
+    body > .container-fluid.py-5.home-services,
+    body > .container-fluid.py-5.product-services { padding: 32px 0 !important; }
     .service-item { min-height: 280px; }
 }
 
@@ -630,7 +632,7 @@ img[src*="abstract-"]:not(.blog-img img):not(.team-img img) { border: 1px solid 
     font-size: 15px; line-height: 1.5; border-radius: 7px !important;
 }
 .service-item a.btn.service-detail-link:hover { color:#fff; background:#087d9e; border-color:#087d9e; box-shadow: none; }
-:is(.page-content, .container-fluid.py-5, .bg-dark) a:not(.btn):not(.navbar-brand):not(:has(img)):hover {
+:is(.page-content, .container-fluid.py-5, .bg-dark) a:not(.btn):not(.navbar-brand):not(.certificate-preview):not(.case-image-link):hover {
     text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
 }
 .technology-list li { padding: 2px 10px; border: 0; border-radius: 0; background: transparent; cursor: default; }

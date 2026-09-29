@@ -93,8 +93,8 @@ body > .container-fluid.py-5:nth-of-type(even) { background: var(--light); }
 .expertise-strip ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 38px; color: #536074; font-size: 18px; font-weight: 600; }
 
 /* Service collections: neutral cards, restrained cyan actions. */
-body > .container-fluid.py-5:has(.service-item) { background: var(--light); padding-top: 64px !important; padding-bottom: 64px !important; }
-body > .container-fluid.py-5.product-services:has(.service-item) { background: #fff; }
+body > .container-fluid.py-5.home-services { background: var(--light); padding-top: 64px !important; padding-bottom: 64px !important; }
+body > .container-fluid.py-5.product-services { background: #fff; padding-top: 64px !important; padding-bottom: 64px !important; }
 .product-services .section-title,.home-services .section-title { max-width: 760px !important; }
 body :is(.home-services,.product-services) .section-title :is(h1,h2) { color: var(--dark); }
 body :is(.home-services,.product-services) .section-title .section-eyebrow { color: var(--brand-cyan-ink) !important; }
@@ -140,7 +140,7 @@ img[src*="abstract-"]:not(.blog-img img):not(.team-img img) { border: 1px solid 
 .content-panel h3 { color: var(--dark); }
 .detail-layout aside .content-panel { background: var(--light); border-color: var(--site-border); }
 .detail-layout aside h2 { font-size: 18px; }
-.detail-layout aside .content-panel:last-child:has(.btn) { background: var(--brand-cyan-soft); border-color: var(--brand-cyan-border); color: #586174; }
+.detail-layout aside .content-panel.consultation-link { background: var(--brand-cyan-soft); border-color: var(--brand-cyan-border); color: #586174; }
 .related-links a { font-size: 14px; padding: 13px 0; }
 .related-links a[aria-current="page"],.navbar .dropdown-item[aria-current="page"] { color: var(--brand-cyan-ink); background: var(--brand-cyan-soft); box-shadow: inset 3px 0 var(--brand-cyan); }
 .service-list li { padding: 7px 0 7px 5px; }

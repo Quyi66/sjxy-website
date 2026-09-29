@@ -80,7 +80,7 @@ body > .bg-dark.mt-5 .link-animated > .static-label { font-size: 15px; color: #5
 .homepage > #main-content:not([data-service-showcase]) > .container { padding-block: 0 !important; }
 .homepage > .container-fluid.ui-section-compact.py-5:not([data-service-showcase]):not(.bg-dark) { padding-block: var(--ui-space-compact) !important; }
 .homepage .ui-section-compact .section-title h2 { font-size: clamp(26px,2vw,32px); }
-.homepage > .container-fluid:has(.milestone-carousel) { background: var(--light); }
+.homepage > .container-fluid.milestone-section { background: var(--light); }
 .section-title:not([data-service-showcase] *) :is(h1,h2) {
     font-size: clamp(28px,2.2vw,36px); line-height: 1.45;
 }
