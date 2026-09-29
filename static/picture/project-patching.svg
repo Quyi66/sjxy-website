@@ -14,5 +14,5 @@
 <text x="480" y="359" text-anchor="middle" class="title">补丁管理平台</text><text x="480" y="401" text-anchor="middle">软件包同步 / Ansible 自动纳管</text>
 <path d="M480 430V464H176V502" class="arrow"/><path d="M480 464V502" class="arrow"/><path d="M480 464H784V502" class="arrow"/>
 <rect x="32" y="512" width="288" height="104" rx="10" class="panel"/><rect x="336" y="512" width="288" height="104" rx="10" class="panel"/><rect x="640" y="512" width="288" height="104" rx="10" class="panel"/>
-<g text-anchor="middle"><text x="176" y="554" class="label">RHEL 6</text><text x="176" y="590">Linux 服务器</text><text x="480" y="554" class="label">SUSE</text><text x="480" y="590">Linux 服务器</text><text x="784" y="554" class="label">CentOS</text><text x="784" y="590">Linux 服务器</text></g>
+<g text-anchor="middle"><text x="176" y="554" class="label">企业版 Linux 6</text><text x="176" y="590">Linux 服务器</text><text x="480" y="554" class="label">SUSE</text><text x="480" y="590">Linux 服务器</text><text x="784" y="554" class="label">CentOS</text><text x="784" y="590">Linux 服务器</text></g>
 </svg>
