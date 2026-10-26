@@ -2,13 +2,15 @@
     'use strict';
     var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     var scenes = {
-        'koreops.html': { name: 'KOREOPS / CORE CAPABILITIES', icon: 'fa fa-shield-alt', center: 'KoreOps 核心功能', nodes: ['CVE 分析', '执行前校验', '补丁与回滚', '审批审计'], caption: '连接漏洞发现、补丁执行与审计留痕', kind: 'platform', visualLabel: '补丁运维流程示意', detailLabel: '查看平台详情' },
-        'directory1.html': { name: 'LINUX SUPPORT', icon: 'fab fa-linux', center: 'Linux 运行平台', nodes: ['技术支持', '性能调优', '持续运维'], caption: '为企业核心系统提供稳定的技术支撑', kind: 'platform' },
-        'directory2.html': { name: 'OPERATIONS & DEVELOPMENT', icon: 'fa fa-cogs', center: '自动化运维体系', nodes: ['运维支持', '技术咨询', '定制开发'], caption: '连接业务需求、运维流程与自动化工具', kind: 'pipeline' },
-        'directory3.html': { name: 'CONTAINERS & CLOUD NATIVE', icon: 'fa fa-cubes', center: 'Kubernetes', nodes: ['应用部署', '容器编排', 'DevOps 协作'], caption: '从应用交付到容器管理，连接开发与运维', kind: 'cluster' },
-        'directory4.html': { name: 'OPEN CLOUD PLATFORM', icon: 'fa fa-network-wired', center: 'OpenStack 私有云', nodes: ['计算资源池', 'Ceph 存储', '虚拟化网络'], caption: '统一计算、存储与网络资源', kind: 'platform' },
-        'directory5.html': { name: 'CLOUD MIGRATION', icon: 'fa fa-cloud', center: '公有云迁移与支持', nodes: ['迁移评估', '方案实施', '运维与代维'], caption: '从现有环境到云端，提供全流程技术支持', kind: 'migration' },
-        'directory6.html': { name: 'KNOWLEDGE & TRAINING', icon: 'fa fa-graduation-cap', center: '团队能力建设', nodes: ['定制课程', '技术实践', '知识传递'], caption: '围绕团队需求，让技术与经验持续传递', kind: 'pipeline' }
+        'ai.html': { name: 'ENTERPRISE AI', icon: 'fa fa-brain', center: 'AI 全栈赋能', nodes: ['咨询与培训', 'RAG 知识库', '智能体定制与陪跑'], caption: '连接私域数据、大模型与算力，支持业务落地', kind: 'pipeline' },
+        'xinchuang.html': { name: 'XINCHUANG SOLUTIONS', icon: 'fa fa-layer-group', center: '信创综合解决方案', nodes: ['咨询规划', '集成建设', '业务适配与验收'], caption: '从信创规划到业务落地，提供全流程支撑', kind: 'pipeline' },
+        'koreops.html': { name: 'KOREOPS / INTELLIGENT OPERATIONS', icon: 'fa fa-shield-alt', center: 'KoreOps 智能运维平台', nodes: ['漏洞分析', '补丁执行', '验证回退'], caption: 'AI 知识与资产管理，支撑补丁治理及审批审计', kind: 'platform', visualLabel: '智能运维流程示意', detailLabel: '查看平台详情' },
+        'directory1.html': { name: 'SYSTEM OPERATIONS', icon: 'fa fa-server', center: '跨品牌系统运维', nodes: ['操作系统支持', '高级运维', '驻场服务'], caption: '为金融核心业务提供统一技术支持', kind: 'platform' },
+        'directory2.html': { name: 'OPEN SOURCE & OPERATIONS', icon: 'fa fa-cogs', center: '开源建设与治理', nodes: ['开源组件支持', '监控运维一体化', '安全与智能运维'], caption: '连接开源组件、运维平台与自动化能力', kind: 'pipeline' },
+        'directory3.html': { name: 'CONTAINERS & CLOUD NATIVE', icon: 'fa fa-cubes', center: 'Kubernetes', nodes: ['容器运维', '多租户隔离', '信创转型'], caption: '结合容器与信创能力，支持业务平滑升级', kind: 'cluster' },
+        'directory4.html': { name: 'OPEN CLOUD PLATFORM', icon: 'fa fa-network-wired', center: '虚拟化与开源云平台', nodes: ['虚拟化', '分布式存储', 'OpenStack 私有云'], caption: '面向底层基础设施提供端到端交付', kind: 'platform' },
+        'directory5.html': { name: 'PUBLIC & MULTI CLOUD', icon: 'fa fa-cloud', center: '公有云与多云支持', nodes: ['多云技术栈', '资源管理', '高级运维'], caption: '结合业务场景规划多云部署与技术支持', kind: 'platform' },
+        'directory6.html': { name: 'KNOWLEDGE & TRAINING', icon: 'fa fa-graduation-cap', center: '技术与 AI 培训', nodes: ['管理层认知', '技术层实操', '业务团队应用'], caption: '结合 AI 落地与运维实践，支持团队能力建设', kind: 'pipeline' }
     };
     function el(tag, cls, text) {
         var node = document.createElement(tag);

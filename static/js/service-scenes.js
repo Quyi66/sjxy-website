@@ -17,29 +17,48 @@
         return s;
     }
     var renderers = {
+        ai: function () {
+            var s = text(300, 38, '企业 AI 能力体系', 'scene-title', 'middle');
+            ['私域数据', '大模型', '算力'].forEach(function (label, i) {
+                var x = 35 + i * 180;
+                s += box(x, 70, 170, 62, 'scene-soft') + text(x + 85, 108, label, '', 'middle');
+            });
+            s += flow('M120 132V158H480V132 M300 132V178');
+            s += box(115, 178, 370, 60) + text(300, 215, 'RAG 知识库与智能体平台', 'scene-title', 'middle');
+            s += flow('M300 238V266');
+            s += text(300, 294, '业务定制 · 项目陪跑 · 持续优化', '', 'middle');
+            return s;
+        },
+        xinchuang: function () {
+            var s = text(300, 38, '金融信创全流程支撑', 'scene-title', 'middle');
+            s += flow('M100 144H500');
+            ['咨询规划', '集成建设', '业务适配'].forEach(function (label, i) {
+                var x = 35 + i * 180;
+                s += group(box(x, 98, 170, 92, 'scene-soft') + text(x + 85, 128, '0' + (i + 1), 'scene-small', 'middle') + text(x + 85, 162, label, 'scene-title', 'middle'), 'scene-motion scene-step', i * .8);
+            });
+            s += box(80, 228, 440, 62) + text(300, 253, '服务器 · 操作系统 · 数据库 · 中间件', 'scene-small', 'middle') + text(300, 278, '项目管理与验收支持', '', 'middle');
+            return s;
+        },
         koreops: function () {
             var s = box(35, 35, 530, 260, 'scene-terminal') + box(35, 35, 530, 36, 'scene-soft');
             s += circle(54, 53, 4, 'scene-accent') + circle(69, 53, 4, 'scene-muted-fill') + circle(84, 53, 4, 'scene-muted-fill');
-            s += text(109, 59, 'KoreOps / 补丁运维', 'scene-small');
-            s += flow('M201 154H227 M373 154H399');
-            s += path('M219 149l8 5-8 5 M391 149l8 5-8 5');
+            s += text(109, 59, 'KoreOps / 智能运维', 'scene-small');
+            s += box(55, 84, 490, 30, 'scene-soft') + text(300, 105, 'AI 运维知识助手', 'scene-small', 'middle');
+            s += flow('M201 180H227 M373 180H399');
+            s += path('M219 175l8 5-8 5 M391 175l8 5-8 5');
             [
-                { x: 55, title: 'CVE 分析', detail: '定位受影响主机' },
-                { x: 227, title: '执行前校验', detail: '检查依赖与环境' },
-                { x: 399, title: '补丁执行', detail: '安装并验证结果' }
+                { x: 55, title: '漏洞分析', detail: 'CVE 与资产关联' },
+                { x: 227, title: '补丁执行', detail: '预检与自动化安装' },
+                { x: 399, title: '验证回退', detail: '按原作业批次回退' }
             ].forEach(function (step, i) {
-                s += box(step.x, 104, 146, 96, i === 2 ? 'scene-soft' : 'scene-box');
-                s += text(step.x + 16, 128, '0' + (i + 1), 'scene-small');
-                s += text(step.x + 73, 154, step.title, 'scene-title', 'middle');
-                s += text(step.x + 73, 180, step.detail, 'scene-small', 'middle');
-                s += group(circle(step.x + 128, 122, 3, 'scene-accent'), 'scene-motion scene-step', i * .8);
+                s += box(step.x, 132, 146, 96, i === 2 ? 'scene-soft' : 'scene-box');
+                s += text(step.x + 16, 156, '0' + (i + 1), 'scene-small');
+                s += text(step.x + 73, 182, step.title, 'scene-title', 'middle');
+                s += text(step.x + 73, 208, step.detail, 'scene-small', 'middle');
+                s += group(circle(step.x + 128, 150, 3, 'scene-accent'), 'scene-motion scene-step', i * .8);
             });
-            // Rollback is a separate branch, not a return to preflight validation.
-            s += flow('M472 200v24H440');
-            s += path('M448 219l-8 5 8 5');
-            s += box(240, 212, 200, 24, 'scene-terminal', 4) + text(340, 229, '按原作业批次回滚', 'scene-small', 'middle');
             s += path('M55 250H545', 'scene-route');
-            s += text(300, 271, '审批管控 · 执行留痕 · 审计追溯', 'scene-small', 'middle');
+            s += text(300, 274, '统一资产管理 · 审批管控 · 审计追溯', 'scene-small', 'middle');
             return s;
         },
         linux: function () {
@@ -69,7 +88,7 @@
         },
         infrastructure: function () {
             var s = '';
-            [{y:235,t:'网络 · 虚拟化连接'},{y:145,t:'存储 · Ceph'},{y:55,t:'计算 · OpenStack'}].forEach(function (layer, i) {
+            [{y:235,t:'基础 · 虚拟化'},{y:145,t:'数据 · 分布式存储'},{y:55,t:'云平台 · OpenStack'}].forEach(function (layer, i) {
                 var d = 'M100 ' + layer.y + 'l200-32 200 32-200 32Z';
                 var body = path('M100 ' + layer.y + 'v14l200 32 200-32v-14l-200 32Z', 'scene-layer-side') + path(d, 'scene-layer');
                 body += text(300, layer.y + 6, layer.t, 'scene-layer-label', 'middle');
@@ -123,7 +142,7 @@
             var s = circle(300, 164, 117, 'scene-orbit');
             s += group(circle(300, 47, 7, 'scene-accent'), 'scene-motion scene-orbit-dot');
             s += circle(300, 164, 57, 'scene-soft') + text(300, 158, '统一资源池', 'scene-title', 'middle') + text(300, 184, 'RESOURCE POOL', 'scene-tiny', 'middle');
-            [[63,119,'计算','CPU / VM'],[414,119,'存储','Ceph'],[228,265,'网络','VPC / VLAN']].forEach(function (v) {
+            [[63,119,'计算','CPU / VM'],[414,119,'存储','分布式存储'],[228,265,'网络','VPC / VLAN']].forEach(function (v) {
                 s += box(v[0], v[1], 123, 67) + text(v[0] + 61, v[1] + 28, v[2], '', 'middle') + text(v[0] + 61, v[1] + 52, v[3], 'scene-small', 'middle');
             });
             s += flow('M186 154H243 M357 154H414 M300 221V265');
@@ -152,7 +171,7 @@
             return s;
         }
     };
-    var business = {'koreops.html':'koreops','directory1.html':'linux','directory2.html':'automation','directory3.html':'containers','directory4.html':'infrastructure','directory5.html':'migration','directory6.html':'learning'};
+    var business = {'ai.html':'ai','xinchuang.html':'xinchuang','koreops.html':'koreops','directory1.html':'linux','directory2.html':'automation','directory3.html':'containers','directory4.html':'infrastructure','directory5.html':'migration','directory6.html':'learning'};
     var catalogue = {'directory2.html':'automation','directory3.html':'delivery','directory4.html':'resources','directory5.html':'roadmap','directory6.html':'growth'};
     window.SJXYServiceScenes = function (href, isCatalogue) {
         var key = (isCatalogue ? catalogue : business)[href];

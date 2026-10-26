@@ -71,23 +71,23 @@
     .homepage .architecture-base span + span { padding-top: 8px; border-top: 1px solid var(--brand-cyan-border); }
 }
 
-/* Keep the connector visible on both regular and active milestone cards. */
-.homepage .milestone-carousel .milestone-marker::after,
-.homepage .milestone-carousel .owl-item.center .milestone-marker::after {
-    height: 2px;
-    background: #9aaabd;
-}
-
-/* Bounded timeline: compact cards and a connector sized by its own card. */
+/* Keep the timeline between the heading and body as card content wraps. */
 .homepage .milestone-carousel .owl-stage { padding: 12px 0 20px; }
 .homepage .milestone-carousel .testimonial-item { min-height: 224px; }
 .homepage .milestone-carousel .testimonial-item > .border-bottom { padding: 24px !important; }
 .homepage .milestone-carousel .milestone-year { font-size: clamp(38px, 3.3vw, 44px); }
-.homepage .milestone-carousel h4 { margin-bottom: 40px !important; }
-.homepage .milestone-carousel small { min-height: 0; text-transform: none !important; }
-.homepage .milestone-carousel .milestone-marker { top: 86px; left: 24px; }
-.homepage .milestone-carousel .milestone-marker::after { display: none; }
-.homepage .milestone-carousel .testimonial-item > .border-bottom::before {
-    content: ''; position: absolute; top: 91px; left: 48px; right: 24px;
+.homepage .milestone-carousel h3 { margin-bottom: 0 !important; }
+.homepage .milestone-carousel .testimonial-item .milestone-marker {
+    position: relative; display: block; top: auto; left: auto;
+    width: 100%; height: 12px; margin: 20px 0;
+    border: 0; border-radius: 0; background: transparent; box-shadow: none;
+}
+.homepage .milestone-carousel .testimonial-item .milestone-marker::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 12px; height: 12px; border: 3px solid #fff; border-radius: 50%;
+    background: var(--brand-cyan); box-shadow: 0 0 0 1px var(--brand-cyan-border);
+}
+.homepage .milestone-carousel .testimonial-item .milestone-marker::after {
+    content: ''; display: block; position: absolute; top: 5px; left: 24px; right: 0; width: auto;
     height: 2px; background: #9aaabd;
 }

@@ -50,7 +50,7 @@
         var hub = document.createElement('div');
         hub.className = 'ko-flow-hub';
         hub.setAttribute('aria-hidden', 'true');
-        hub.innerHTML = '<span>全生命周期</span><strong>01</strong><small>发现 → 执行 → 留痕</small>';
+        hub.innerHTML = '<span>能力协同</span><strong>01</strong><small>知识 → 作业 → 治理</small>';
         map.appendChild(hub);
         // Decorative paths follow the actual node positions, including font/layout changes.
         var svgNamespace = 'http://www.w3.org/2000/svg';

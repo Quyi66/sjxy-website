@@ -9,6 +9,7 @@
     .navbar.site-nav-compact .navbar-nav .nav-link { font-size: 15px; }
     .navbar.site-nav-compact :is(.nav-submenu,.dropdown-menu) { width: 224px; min-width: 224px; }
     .navbar.site-nav-compact .nav-products > :is(.nav-submenu,.dropdown-menu) { width: 248px; }
+    .navbar.site-nav-compact .nav-products > :is(.nav-submenu,.dropdown-menu) { max-height: min(70vh, 640px); overflow-y: auto; }
     .navbar.site-nav-compact .nav-about > :is(.nav-submenu,.dropdown-menu) { left: auto; right: 0; }
     .navbar.site-nav-compact .dropdown-item { font-size: 15px; font-weight: 500; }
     .navbar.site-nav-compact .dropdown-item[aria-current="page"] { font-weight: 600; }
